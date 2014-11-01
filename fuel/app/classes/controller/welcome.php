@@ -77,7 +77,7 @@ class Controller_Welcome extends Controller {
         $view = View::Forge('layout/property');
         $view->header = View::Forge('layout/header');
         $view->sidebar = View::Forge('layout/component/sidebar-left');
-        $view->project_listing = View::Forge('layout/project_listing');
+        $view->postproperty = View::Forge('layout/component/postproperty');
         $view->footer = View::Forge('layout/footer');
         return $view;
     }
@@ -96,6 +96,14 @@ class Controller_Welcome extends Controller {
         $view->header = View::Forge('layout/header');
         $view->sidebar = View::Forge('layout/component/sidebar-left');
         $view->project_listing = View::Forge('layout/project');
+        $view->footer = View::Forge('layout/footer');
+        return $view;
+    }
+    public function action_login() {
+        $view = View::Forge('layout/login');
+        $view->header = View::Forge('layout/header');
+       // $view->sidebar = View::Forge('layout/component/sidebar-left');
+       // $view->project_listing = View::Forge('layout/project');
         $view->footer = View::Forge('layout/footer');
         return $view;
     }

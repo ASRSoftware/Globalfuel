@@ -9,7 +9,7 @@
     </div>
     
     <?php echo $sidebar ?>
-    <?php echo $project_listing?>
+    <?php echo $postproperty?>
      
             </div>
         </div>
