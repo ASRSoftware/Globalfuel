@@ -51,6 +51,17 @@ class Controller_Admin extends Controller {
         //return Response::forge(Presenter::forge('welcome/hello'));
     }
 
+    /*   */
+
+    public function action_login() {
+
+        $view = View::forge('admin/layout/dashboard');
+        $view->menu = View::forge('admin/layout/menu');
+        $view->container = View::forge('admin/form/form');
+        return $view;
+        //return Response::forge(Presenter::forge('welcome/hello'));
+    }
+
     public function action_about() {
         $view = View::Forge('layout/aboutus');
         $view->header = View::Forge('layout/header');

@@ -1,4 +1,4 @@
-<div class="col-md-4 sidebar-top-max">
+<div class="col-md-4 sidebar-top-<?php echo $size;?>">
                 <div class="sidebar">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="search for property">

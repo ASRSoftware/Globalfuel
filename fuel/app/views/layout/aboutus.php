@@ -9,6 +9,7 @@
 </div>
 <div class="container">
     <div class="row">
+        
         <?php echo $sidebar ?>
         <div class="col-md-8">
             <div class="breadcrumbs">

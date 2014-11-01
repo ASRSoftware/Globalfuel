@@ -31,7 +31,9 @@ class Controller_Welcome extends Controller {
     public function action_index() {
         $view = View::Forge('layout/index');
         $view->header = View::Forge('layout/header');
-        $view->sidebar = View::forge('layout/component/sidebar');
+        $sidebar = View::forge('layout/component/sidebar');
+        $sidebar->size = 'max';
+        $view->sidebar = $sidebar;
         $view->recent_listing = View::forge('layout/component/recent_listing');
         $view->best_offer = View::forge('layout/component/best_offer');
         $view->footer = View::Forge('layout/footer');
@@ -54,31 +56,33 @@ class Controller_Welcome extends Controller {
     }
 
     public function action_about() {
-       $view = View::Forge('layout/aboutus');
-           $view->header =  View::Forge('layout/header');
-           $view->sidebar = View::forge('layout/component/sidebar');
-           $view->footer=View::Forge('layout/footer');
-           return $view;
+        $view = View::Forge('layout/aboutus');
+        $view->header = View::Forge('layout/header');
+        $sidebar = View::forge('layout/component/sidebar');
+        $sidebar->size = 'small';
+        $view->sidebar = $sidebar;
+        $view->footer = View::Forge('layout/footer');
+        return $view;
     }
-    public function action_contact()
-	{
-           $view = View::Forge('layout/contactus');
-           $view->header =  View::Forge('layout/header');
-           $view->sidebar = View::Forge('layout/sidebar-left');
-           $view->footer=View::Forge('layout/footer');
-           return $view;
-	}
-        public function action_sellrentproperty()
-	{
-           $view = View::Forge('layout/property');
-           $view->header =  View::Forge('layout/header');
-           $view->sidebar = View::Forge('layout/sidebar-left');
-           $view->form = View::Forge('layout/postproperty');
-           $propertytype = View::Forge('layout/propertytype');
-           $view->form->propertytype = $propertytype;
-           $view->footer=View::Forge('layout/footer');
-           return $view;
-	}
+
+    public function action_contact() {
+        $view = View::Forge('layout/contactus');
+        $view->header = View::Forge('layout/header');
+        $view->sidebar = View::Forge('layout/sidebar-left');
+        $view->footer = View::Forge('layout/footer');
+        return $view;
+    }
+
+    public function action_sellrentproperty() {
+        $view = View::Forge('layout/property');
+        $view->header = View::Forge('layout/header');
+        $view->sidebar = View::Forge('layout/sidebar-left');
+        $view->form = View::Forge('layout/postproperty');
+        $propertytype = View::Forge('layout/propertytype');
+        $view->form->propertytype = $propertytype;
+        $view->footer = View::Forge('layout/footer');
+        return $view;
+    }
 
     /**
      * The 404 action for the application.
