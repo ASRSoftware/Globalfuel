@@ -387,6 +387,24 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 -- Dumping data for table globalrealestate.user: ~0 rows (approximately)
 DELETE FROM `user`;
+
+
+--baunglow
+CREATE TABLE `Baunglow_master` (
+	`Baunglow_id` INT(10) NOT NULL,
+	`Location_id` INT(10) NOT NULL,
+	`City_id` INT(10) NOT NULL,
+	`Baunglow_name` VARCHAR(200) NOT NULL,
+	`Developer_name` VARCHAR(200) NOT NULL,
+	`Possession_status` VARCHAR(200) NOT NULL,
+	`Baunglow_area` INT(50) NOT NULL,
+	PRIMARY KEY (`Baunglow_id`),
+	INDEX `Fk_location_id` (`Location_id`),
+	INDEX `Fk_city_id` (`City_id`),
+	CONSTRAINT `Fk_city_id` FOREIGN KEY (`City_id`) REFERENCES `city` (`city_id`),
+	CONSTRAINT `Fk_location_id` FOREIGN KEY (`Location_id`) REFERENCES `locality` (`locality_id`)
+)
+
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
