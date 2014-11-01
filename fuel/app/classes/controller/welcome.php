@@ -68,7 +68,7 @@ class Controller_Welcome extends Controller {
     public function action_contact() {
         $view = View::Forge('layout/contactus');
         $view->header = View::Forge('layout/header');
-        $view->sidebar = View::Forge('layout/sidebar-left');
+        $view->sidebar = View::Forge('layout/component/sidebar-left');
         $view->footer = View::Forge('layout/footer');
         return $view;
     }
@@ -77,9 +77,25 @@ class Controller_Welcome extends Controller {
         $view = View::Forge('layout/property');
         $view->header = View::Forge('layout/header');
         $view->sidebar = View::Forge('layout/component/sidebar-left');
-        //$view->form = View::Forge('layout/postproperty');
-        //$propertytype = View::Forge('layout/propertytype');
-      //  $view->form->propertytype = $propertytype;
+        $view->project_listing = View::Forge('layout/project_listing');
+        $view->footer = View::Forge('layout/footer');
+        return $view;
+    }
+    
+    public function action_bunglow() {
+        $view = View::Forge('layout/bunglow');
+        $view->header = View::Forge('layout/header');
+        $view->sidebar = View::Forge('layout/component/sidebar-left');
+        $view->project_listing = View::Forge('layout/project_listing');
+        $view->footer = View::Forge('layout/footer');
+        return $view;
+    }
+    
+    public function action_newproject() {
+        $view = View::Forge('layout/property');
+        $view->header = View::Forge('layout/header');
+        $view->sidebar = View::Forge('layout/component/sidebar-left');
+        $view->project_listing = View::Forge('layout/project');
         $view->footer = View::Forge('layout/footer');
         return $view;
     }
