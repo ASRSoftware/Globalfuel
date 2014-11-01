@@ -56,7 +56,7 @@
                     </div>
                     <p class="navbar-text scroll-move visible-md visible-lg">Contact Us: <strong>022-277-42-092</strong></p>
                     <div class="navbar-logo visible-md visible-lg">
-                        <div class="logo" data-bg="assets/images/bricklogo.png" data-height="150"></div>
+                        <div class="logo" data-bg="<?php echo Uri::base(false);?>assets/img/bricklogo.png" data-height="150"></div>
                     </div>
                 </div>
 

@@ -31,6 +31,9 @@ class Controller_Welcome extends Controller {
     public function action_index() {
         $view = View::Forge('layout/index');
         $view->header = View::Forge('layout/header');
+        $view->sidebar = View::forge('layout/component/sidebar');
+        $view->recent_listing = View::forge('layout/component/recent_listing');
+        $view->best_offer = View::forge('layout/component/best_offer');
         $view->footer = View::Forge('layout/footer');
         return $view;
     }
@@ -53,7 +56,7 @@ class Controller_Welcome extends Controller {
     public function action_about() {
        $view = View::Forge('layout/aboutus');
            $view->header =  View::Forge('layout/header');
-           $view->sidebar = View::forge('layout/sidebar-left');
+           $view->sidebar = View::forge('layout/component/sidebar');
            $view->footer=View::Forge('layout/footer');
            return $view;
     }
