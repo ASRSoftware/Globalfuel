@@ -65,24 +65,24 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown">
-                                    <a href="index.php" class="dropdown-toggle" data-toggle="dropdown">Home </a>
+                                    <a href="<?php echo Uri::base(false);?>index.php" class="dropdown-toggle" data-toggle="dropdown">Home </a>
                                     <!-- <ul class="dropdown-menu">
                                          <li><a href="ws-index-2.html">Home Without Sidebar 2</a></li>
                                      </ul>-->
                                 </li>
                                 <li class="dropdown">
-                                    <a href="http://localhost/global3/public/welcome/about/">About Us</a>
+                                    <a href="<?php echo Uri::base(false);?>welcome/about/">About Us</a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="http://localhost/global3/public/welcome/sellrentproperty/" class="dropdown-toggle" data-toggle="dropdown">Sell/Rent Properties </a>
+                                    <a href="<?php echo Uri::base(false);?>welcome/sellrentproperty/" class="dropdown-toggle" data-toggle="dropdown">Sell/Rent Properties </a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="blog.php" class="dropdown-toggle" data-toggle="dropdown">Bunglow </b></a>
+                                    <a href="<?php echo Uri::base(false);?>blog" class="dropdown-toggle" data-toggle="dropdown">Bunglow </b></a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="04-blog.html" class="dropdown-toggle" data-toggle="dropdown">New Project </b></a>
+                                    <a href="<?php echo Uri::base(false);?>04-blog.html" class="dropdown-toggle" data-toggle="dropdown">New Project </b></a>
                                 </li>
-                                <li class="active"><a href="http://localhost/global3/public/welcome/contact">Contact Us</a></li>
+                                <li class="active"><a href="<?php echo Uri::base(false);?>welcome/contact">Contact Us</a></li>
 
                             </ul>
                         </div><!-- /.navbar-collapse -->
