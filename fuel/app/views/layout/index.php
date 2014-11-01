@@ -5,7 +5,7 @@
 
     <section class="flexslider std-slider" data-height="570" data-direction="horizontal" data-animation="fade" data-loop="true" data-smooth="false" data-slideshow="true" data-speed="25000" data-animspeed="550" data-controls="false" data-dircontrols="true">
         <ul class="slides">
-            <li data-bg="assets/images/demo-content/house.jpg">
+            <li data-bg="<?php echo Uri::base(false);?>assets/img/demo-content/house.jpg">
                 <div class="inner">
                     <div class="container">
                         <div class="row">
@@ -13,13 +13,13 @@
                                 <div class="object animated big" data-top="200px" data-fx="fadeInUp">Welcome<br> home!</div>
                             </div>
                             <div class="col-xs-6 col-md-4">
-                                <img class="object animated" data-top="136px" data-fx="fadeInRightBig" src="assets/images/demo-content/family.png" alt="">
+                                <img class="object animated" data-top="136px" data-fx="fadeInRightBig" src="<?php echo Uri::base(false);?>assets/img/demo-content/family.png" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
             </li>
-            <li data-bg="assets/images/demo-content/house2.jpg">
+            <li data-bg="<?php echo Uri::base(false);?>assets/img/demo-content/house2.jpg">
                 <div class="inner">
                     <img class="object animated absolute hidden-xs" data-top="0" data-right="0" data-fx="fadeInRightBig" src="<?php echo Asset::img('demo-content/keyhands.png');?>" >
                     <div class="container">
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </li>
-            <li data-bg="assets/images/demo-content/house3.jpg">
+            <li data-bg="<?php echo Uri::base(false);?>assets/img/demo-content/house3.jpg">
                 <div class="inner">
                     <div class="container">
                         <div class="row">
@@ -204,10 +204,10 @@
                                         <div class="thumbnail boxed">
                                             <div class="listing-image">
                                                 <span class="listing-tag important">New</span>
-                                                <img src="assets/images/demo-content/listing5.jpg" alt="Listing">
+                                                <img src="<?php echo Uri::base(false);?>assets/img/demo-content/listing5.jpg" alt="Listing">
                                                 <div class="image-links">
                                                     <div class="left">
-                                                        <a class="inner" href="assets/images/demo-content/listing5.jpg" data-lightbox="related-1">
+                                                        <a class="inner" href="<?php echo Uri::base(false);?>assets/img/demo-content/listing5.jpg" data-lightbox="related-1">
                                                             <i class="fa fa-camera"></i>
                                                         </a>
                                                     </div>
@@ -261,10 +261,10 @@
                                         <div class="thumbnail boxed">
                                             <div class="listing-image">
                                                 <span class="listing-tag important">New</span>
-                                                <img src="assets/images/demo-content/listing2.jpg" alt="Listing">
+                                                <img src="<?php echo Uri::base(false);?>assets/img/demo-content/listing2.jpg" alt="Listing">
                                                 <div class="image-links">
                                                     <div class="left">
-                                                        <a class="inner" href="assets/images/demo-content/listing2.jpg" data-lightbox="related-3">
+                                                        <a class="inner" href="<?php echo Uri::base(false);?>assets/img/demo-content/listing2.jpg" data-lightbox="related-3">
                                                             <i class="fa fa-camera"></i>
                                                         </a>
                                                     </div>
@@ -322,10 +322,10 @@
                                         <div class="thumbnail boxed">
                                             <div class="listing-image">
                                                 <span class="listing-tag important">New</span>
-                                                <img src="assets/images/demo-content/listing4.jpg" alt="Listing">
+                                                <img src="<?php echo Uri::base(false);?>assets/img/demo-content/listing4.jpg" alt="Listing">
                                                 <div class="image-links">
                                                     <div class="left">
-                                                        <a class="inner" href="assets/images/demo-content/listing4.jpg" data-lightbox="related-4">
+                                                        <a class="inner" href="<?php echo Uri::base(false);?>assets/img/demo-content/listing4.jpg" data-lightbox="related-4">
                                                             <i class="fa fa-camera"></i>
                                                         </a>
                                                     </div>
@@ -385,10 +385,10 @@
                                         <div class="thumbnail boxed">
                                             <div class="listing-image">
                                                 <span class="listing-tag important">New</span>
-                                                <img src="assets/images/demo-content/listing9.jpg" alt="Listing">
+                                                <img src="<?php echo Uri::base(false);?>assets/img/demo-content/listing9.jpg" alt="Listing">
                                                 <div class="image-links">
                                                     <div class="left">
-                                                        <a class="inner" href="assets/images/demo-content/listing9.jpg" data-lightbox="related-5">
+                                                        <a class="inner" href="<?php echo Uri::base(false);?>assets/img/demo-content/listing9.jpg" data-lightbox="related-5">
                                                             <i class="fa fa-camera"></i>
                                                         </a>
                                                     </div>
@@ -457,10 +457,10 @@
                                         <div class="thumbnail boxed">
                                             <div class="listing-image">
                                                 <span class="listing-tag important">Reduced</span>
-                                                <img src="assets/images/demo-content/listing10.jpg" alt="Listing">
+                                                <img src="<?php echo Uri::base(false);?>assets/img/demo-content/listing10.jpg" alt="Listing">
                                                 <div class="image-links">
                                                     <div class="left">
-                                                        <a class="inner" href="assets/images/demo-content/listing10.jpg" data-lightbox="related-6">
+                                                        <a class="inner" href="<?php echo Uri::base(false);?>assets/img/demo-content/listing10.jpg" data-lightbox="related-6">
                                                             <i class="fa fa-camera"></i>
                                                         </a>
                                                     </div>
@@ -518,10 +518,10 @@
                                         <div class="thumbnail boxed">
                                             <div class="listing-image">
                                                 <span class="listing-tag important">New</span>
-                                                <img src="assets/images/demo-content/listing6.jpg" alt="Listing">
+                                                <img src="<?php echo Uri::base(false);?>assets/img/demo-content/listing6.jpg" alt="Listing">
                                                 <div class="image-links">
                                                     <div class="left">
-                                                        <a class="inner" href="assets/images/demo-content/listing5.jpg" data-lightbox="related-7">
+                                                        <a class="inner" href="<?php echo Uri::base(false);?>assets/img/demo-content/listing5.jpg" data-lightbox="related-7">
                                                             <i class="fa fa-camera"></i>
                                                         </a>
                                                     </div>
@@ -583,9 +583,9 @@
     <div class="container">
 
     </div>
-	<!-- 
+    <!-- 
 
-    <div class="parallax" style="background-image: url('assets/images/demo-content/parallax3.jpg')">
+    <div class="parallax" style="background-image: url('<?php echo Uri::base(false);?>assets/img/demo-content/parallax3.jpg')">
     <div class="parainner">
         <div class="overlay-parallax"></div>
         <div class="inner">
@@ -617,7 +617,7 @@
                                 </li>
                                 <li>
                                     <div class="media">
-                                        <img class="img-circle pull-left" alt="" src="assets/images/demo-content/customer.jpg">
+                                        <img class="img-circle pull-left" alt="" src="<?php echo Uri::base(false);?>assets/img/demo-content/customer.jpg">
                                         <div class="media-body text-left">
                                             <h3 class="uppercase">Ear what our customers say</h3>
                                             <br>
@@ -649,7 +649,7 @@
                     <div class="title">
                         Buying a property with Global Real Estate
                     </div>
-                    <img src="assets/images/demo-content/buyingproperty.jpg" alt="" class="fit-image">
+                    <img src="<?php echo Uri::base(false);?>assets/img/demo-content/buyingproperty.jpg" alt="" class="fit-image">
                     <div class="caption">
                         <h3 class="uppercase">Welcome to your new home</h3>
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
@@ -700,7 +700,7 @@
     </div>
 
     <div class="container">
-	
+    
     </div>
 
     
