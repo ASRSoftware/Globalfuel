@@ -11,13 +11,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for globalrealestate
-DROP DATABASE IF EXISTS `globalrealestate`;
 CREATE DATABASE IF NOT EXISTS `globalrealestate` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `globalrealestate`;
 
 
 -- Dumping structure for table globalrealestate.alert
-DROP TABLE IF EXISTS `alert`;
 CREATE TABLE IF NOT EXISTS `alert` (
   `alert_id` int(50) NOT NULL AUTO_INCREMENT,
   `property_type` varchar(200) NOT NULL,
@@ -36,7 +34,6 @@ DELETE FROM `alert`;
 
 
 -- Dumping structure for table globalrealestate.city
-DROP TABLE IF EXISTS `city`;
 CREATE TABLE IF NOT EXISTS `city` (
   `city_id` int(50) NOT NULL AUTO_INCREMENT,
   `city_name` varchar(200) NOT NULL,
@@ -60,7 +57,6 @@ INSERT INTO `city` (`city_id`, `city_name`, `insertion_date`, `modify_date`) VAL
 
 
 -- Dumping structure for table globalrealestate.city_area
-DROP TABLE IF EXISTS `city_area`;
 CREATE TABLE IF NOT EXISTS `city_area` (
   `city_area_id` int(10) NOT NULL AUTO_INCREMENT,
   `city_id` int(10) NOT NULL,
@@ -122,7 +118,6 @@ INSERT INTO `city_area` (`city_area_id`, `city_id`, `locality_name`) VALUES
 
 
 -- Dumping structure for table globalrealestate.contactowner
-DROP TABLE IF EXISTS `contactowner`;
 CREATE TABLE IF NOT EXISTS `contactowner` (
   `contact_id` int(50) NOT NULL AUTO_INCREMENT,
   `property_id` int(50) NOT NULL,
@@ -142,7 +137,6 @@ DELETE FROM `contactowner`;
 
 
 -- Dumping structure for table globalrealestate.contactus
-DROP TABLE IF EXISTS `contactus`;
 CREATE TABLE IF NOT EXISTS `contactus` (
   `contact_id` int(50) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
@@ -165,7 +159,6 @@ INSERT INTO `contactus` (`contact_id`, `name`, `contact_number`, `emailaddress`,
 
 
 -- Dumping structure for table globalrealestate.feedback
-DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE IF NOT EXISTS `feedback` (
   `feedback_id` int(10) NOT NULL AUTO_INCREMENT,
   `Name` varchar(200) NOT NULL,
@@ -201,7 +194,6 @@ INSERT INTO `feedback` (`feedback_id`, `Name`, `Email`, `phone`, `fax`, `message
 
 
 -- Dumping structure for table globalrealestate.locality
-DROP TABLE IF EXISTS `locality`;
 CREATE TABLE IF NOT EXISTS `locality` (
   `locality_id` int(50) NOT NULL AUTO_INCREMENT,
   `city_area_id` int(50) NOT NULL,
@@ -220,7 +212,6 @@ DELETE FROM `locality`;
 
 
 -- Dumping structure for table globalrealestate.project
-DROP TABLE IF EXISTS `project`;
 CREATE TABLE IF NOT EXISTS `project` (
   `project_id` int(11) NOT NULL AUTO_INCREMENT,
   `city_id` int(11) NOT NULL DEFAULT '0',
@@ -243,7 +234,6 @@ DELETE FROM `project`;
 
 
 -- Dumping structure for table globalrealestate.project_details
-DROP TABLE IF EXISTS `project_details`;
 CREATE TABLE IF NOT EXISTS `project_details` (
   `project_detail_id` int(11) NOT NULL AUTO_INCREMENT,
   `project_id` int(11) NOT NULL DEFAULT '0',
@@ -262,13 +252,12 @@ DELETE FROM `project_details`;
 
 
 -- Dumping structure for table globalrealestate.property
-DROP TABLE IF EXISTS `property`;
 CREATE TABLE IF NOT EXISTS `property` (
   `property_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(50) NOT NULL,
   `property_mode` varchar(10) NOT NULL,
   `image` blob NOT NULL,
-  `properties_id` int(11) NOT NULL,
+  `propertype_id` int(11) NOT NULL,
   `price` int(30) NOT NULL,
   `locality` varchar(500) NOT NULL,
   `bed_rooms` int(50) NOT NULL,
@@ -279,6 +268,8 @@ CREATE TABLE IF NOT EXISTS `property` (
   `modify_date` date NOT NULL,
   PRIMARY KEY (`property_id`),
   KEY `USER` (`user_id`),
+  KEY `PROPERTYTYPE_FK` (`propertype_id`),
+  CONSTRAINT `PROPERTYTYPE_FK` FOREIGN KEY (`propertype_id`) REFERENCES `property_type` (`propertype_id`),
   CONSTRAINT `USER` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -289,7 +280,6 @@ DELETE FROM `property`;
 
 
 -- Dumping structure for table globalrealestate.property_sub_type
-DROP TABLE IF EXISTS `property_sub_type`;
 CREATE TABLE IF NOT EXISTS `property_sub_type` (
   `property_subtype_id` int(10) NOT NULL,
   `propertype_id` int(10) NOT NULL,
@@ -333,7 +323,6 @@ INSERT INTO `property_sub_type` (`property_subtype_id`, `propertype_id`, `proper
 
 
 -- Dumping structure for table globalrealestate.property_type
-DROP TABLE IF EXISTS `property_type`;
 CREATE TABLE IF NOT EXISTS `property_type` (
   `propertype_id` int(11) NOT NULL AUTO_INCREMENT,
   `property_id` int(11) NOT NULL DEFAULT '0',
@@ -354,7 +343,6 @@ INSERT INTO `property_type` (`propertype_id`, `property_id`, `propertype_name`, 
 
 
 -- Dumping structure for table globalrealestate.state
-DROP TABLE IF EXISTS `state`;
 CREATE TABLE IF NOT EXISTS `state` (
   `state_id` int(50) NOT NULL AUTO_INCREMENT,
   `state_name` varchar(200) NOT NULL,
@@ -370,7 +358,6 @@ DELETE FROM `state`;
 
 
 -- Dumping structure for table globalrealestate.sub_locality
-DROP TABLE IF EXISTS `sub_locality`;
 CREATE TABLE IF NOT EXISTS `sub_locality` (
   `sub_locality_id` int(10) NOT NULL AUTO_INCREMENT,
   `locality_id` int(10) NOT NULL,
@@ -386,7 +373,6 @@ DELETE FROM `sub_locality`;
 
 
 -- Dumping structure for table globalrealestate.user
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(50) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
