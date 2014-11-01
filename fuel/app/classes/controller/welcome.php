@@ -76,10 +76,10 @@ class Controller_Welcome extends Controller {
     public function action_sellrentproperty() {
         $view = View::Forge('layout/property');
         $view->header = View::Forge('layout/header');
-        $view->sidebar = View::Forge('layout/sidebar-left');
-        $view->form = View::Forge('layout/postproperty');
-        $propertytype = View::Forge('layout/propertytype');
-        $view->form->propertytype = $propertytype;
+        $view->sidebar = View::Forge('layout/component/sidebar-left');
+        //$view->form = View::Forge('layout/postproperty');
+        //$propertytype = View::Forge('layout/propertytype');
+      //  $view->form->propertytype = $propertytype;
         $view->footer = View::Forge('layout/footer');
         return $view;
     }
