@@ -35,33 +35,10 @@
 
             </div>
 
-<<<<<<< HEAD
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" data-href="#" class="navbar-toggle toggle-sidebar pull-left" >
-                            <i class="icon-house"></i>
-                        </button>
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand visible-sm visible-xs" href="#"><?php echo Asset::img('bricklogo-smal.png')?></a>
-                        <a class="logo-small invisible hidden-xs hidden-sm" href="#"><?php echo Asset::img('bricklogo-smal.png')?></a>
-                    </div>
-                    <p class="navbar-text scroll-move visible-md visible-lg">Contact Us: <strong>022-277-42-092</strong></p>
-                    <div class="navbar-logo visible-md visible-lg">
-                        <div class="logo" data-bg="<?php echo Uri::base(false);?>assets/img/bricklogo.png" data-height="150"></div>
-                    </div>
-                </div>
-=======
             <nav class="navbar navbar-brick navbar-fixed-top" role="navigation">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 text-center">
->>>>>>> origin/master
-
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header">
                                 <button type="button" data-href="#" class="navbar-toggle toggle-sidebar pull-left" >
@@ -78,7 +55,7 @@
                             </div>
                             <p class="navbar-text scroll-move visible-md visible-lg">Contact Us: <strong>022-277-42-092</strong></p>
                             <div class="navbar-logo visible-md visible-lg">
-                                <div class="logo" data-bg="assets/images/bricklogo.png" data-height="150"></div>
+                                <div class="logo" data-bg="<?php echo Uri::base(false);?>assets/img/bricklogo.png" data-height="150"></div>
                             </div>
                         </div>
 
