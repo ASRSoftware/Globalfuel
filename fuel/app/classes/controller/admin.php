@@ -98,6 +98,15 @@ class Controller_Admin extends Controller {
         
     }
 
+    
+     public function action_project() {
+
+        $view = View::forge('admin/layout/dashboard');
+        $view->menu = View::forge('admin/layout/menu');
+        $view->container = View::forge('admin/Project/Propertypost');
+        return $view;
+        //return Response::forge(Presenter::forge('welcome/hello'));
+    }
     /**
      * The 404 action for the application.
      *
