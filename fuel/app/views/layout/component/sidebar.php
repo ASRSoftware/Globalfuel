@@ -19,7 +19,7 @@
                     <option value="5">5</option>
                 </select>
             </span>
-            
+
             <span class="select-box input-right" title="Location">
                 <select name="Location" data-placeholder="Location">
                     <option>Location</option>
@@ -30,18 +30,12 @@
                     <option value="5">5</option>
                 </select>
             </span>
-            
-            
-            <span class="select-box input-right" title="RentBuy">
-                <select name="RentBuy" data-placeholder="Rent or Buy">
-                    <option>Children</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </span>
+
+
+            <span title="buyrent">
+                <input type="radio" name="buyrent" value="buy">Buy
+                <input type="radio" name="buyrent" value="rent">Rent
+            </span> 
             <span class="select-box input-right" title="Type">
                 <select name="Type" data-placeholder="Type">
                     <option>Type</option>
