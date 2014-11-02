@@ -9,6 +9,17 @@
         <form>
             <h4 class="uppercase motive section-top"><strong>Find your new home</strong></h4>
             <br>
+            <span class="select-box input-right" title="City">
+                <select name="City" data-placeholder="City">
+                    <option>City</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </span>
+            
             <span class="select-box input-right" title="Location">
                 <select name="Location" data-placeholder="Location">
                     <option>Location</option>
@@ -19,6 +30,8 @@
                     <option value="5">5</option>
                 </select>
             </span>
+            
+            
             <span class="select-box input-right" title="RentBuy">
                 <select name="RentBuy" data-placeholder="Rent or Buy">
                     <option>Children</option>

@@ -80,4 +80,10 @@ class Model_CommonFunction extends Model {
     public function delete($table, $where, $value) {
         $query = DB::delete($table)->where($where, 'like', $value)->execute();
     }
+    
+    
+    public function search($table,$where,$value)
+    {
+        
+    }
 }
