@@ -88,14 +88,18 @@ class Controller_Admin extends Controller {
         $view->footer = View::Forge('layout/footer');
         return $view;
     }
-    public function action_bunglow($subname =null){
-        if($subname == null){
-            $view = View::forge('admin/bunglow/bunglowform');
-        return $view;
-        }else{
-            echo 'no ull'.$subname;
+
+    public function action_bunglow($subname = null) {
+        if ($subname == null) {
+            $view = View::forge('admin/layout/dashboard');
+            $view->menu = View::forge('admin/layout/menu');
+            $view->container = View::forge('admin/bunglow/bunglowform');
+
+            
+            return $view;
+        } else {
+            echo 'no ull' . $subname;
         }
-        
     }
 
     

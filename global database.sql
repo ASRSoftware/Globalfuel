@@ -389,7 +389,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 DELETE FROM `user`;
 
 
---baunglow
+
 CREATE TABLE `Baunglow_master` (
 	`Baunglow_id` INT(10) NOT NULL,
 	`Location_id` INT(10) NOT NULL,
