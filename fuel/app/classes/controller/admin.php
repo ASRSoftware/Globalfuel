@@ -89,22 +89,39 @@ class Controller_Admin extends Controller {
         return $view;
     }
 
-    public function action_bunglow($subname = null) {
+    public function action_bungalow($subname = null) {
         if ($subname == null) {
             $view = View::forge('admin/layout/dashboard');
             $view->menu = View::forge('admin/layout/menu');
-            
-            $view->container = View::forge('admin/bunglow/bunglowform');
-            $view->container->bunglowmaster=View::forge('admin/bunglow/bunglowmaster');
-            $aminities=View::forge('admin/bunglow/amenities');
-            $view->container->aminities =$aminities;
-            $bungalowfeature = View::forge('admin/bunglow/bungalowfeature');
-            $view->container->bungalowfeature =$bungalowfeature;
+
+            $view->container = View::forge('admin/bungalow/bungalowform');
+            $view->container->bungalowmaster = View::forge('admin/bungalow/bungalowmaster');
+            $aminities = View::forge('admin/bungalow/amenities');
+            $view->container->aminities = $aminities;
+            $bungalowfeature = View::forge('admin/bungalow/bungalowfeature');
+            $view->container->bungalowfeature = $bungalowfeature;
             return $view;
         } else {
             echo 'no ull' . $subname;
         }
     }
+
+    public function action_createuser($subname = null) {
+        if ($subname == null) {
+            $view = View::forge('admin/layout/dashboard');
+            $view->menu = View::forge('admin/layout/menu');
+            
+            $view->container = View::forge('admin/user/createuser');
+            $view->container->createuser=View::forge('admin/user/createuserform');
+            $loginform=View::forge('admin/user/loginform');
+            $view->container->loginform =$loginform;
+            
+            return $view;
+        } else {
+            echo 'no ull' . $subname;
+        }
+    }
+    
 
     
      public function action_project() {
