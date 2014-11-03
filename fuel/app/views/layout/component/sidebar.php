@@ -10,10 +10,12 @@
             <h4 class="uppercase motive section-top"><strong>Find your new home</strong></h4>
             <br>
             <span class="select-box input-right" title="City">
-                <select name="City" data-placeholder="City">
+                <select name="City" data-placeholder="City" onchange="">
                     <option>City</option>
                     <?php 
-                    foreach ($cityname as $value)
+                    $cityname = new loadData();
+                    $city = $cityname->get_city_data();
+                    foreach ($city as $value)
                     {
                         echo '<option value='.$value['city_id'].'>'.$value['city_name'].'</option>';
                     }
@@ -24,11 +26,7 @@
             <span class="select-box input-right" title="Location">
                 <select name="Location" data-placeholder="Location">
                     <option>Location</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                   
                 </select>
             </span>
 
@@ -36,11 +34,7 @@
                     <span class="select-box input-right" title="Bathrooms">
                         <select name="area" data-placeholder="area">
                             <option>Area</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                            
                         </select>
                     </span>
 

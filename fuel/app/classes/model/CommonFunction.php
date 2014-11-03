@@ -84,32 +84,48 @@ class Model_CommonFunction extends Model {
     }
 
     public function search($table, $where, $value) {
-        
-        
+
+
         $result = \DB::select('*')
                 ->from($table['table']);
-        
-                
-        if($where['mode']!=null)
-        {
+
+
+        if ($where['mode'] != null) {
             $result->where($where['mode'], '=', $value['mode']);
         }
-        if($where['mode']!=null)
-        {
+        if ($where['mode'] != null) {
             $result->where($where['location'], '=', $value['location']);
         }
-        if($where['mode']!=null)
-        {
+        if ($where['mode'] != null) {
             $result->where($where['area'], '=', $value['area']);
         }
-        if($where['mode']!=null)
-        {
-            $result->where($where['bedroom'], '=', $value['bedroom'],'AND');
+        if ($where['mode'] != null) {
+            $result->where($where['bedroom'], '=', $value['bedroom'], 'AND');
         }
-        if($where['mode']!=null)
-        {
-            $result->where($where['price'], 'BETWEEN', $value['minprice'],'AND', $value['maxprice']);
+        if ($where['mode'] != null) {
+            $result->where($where['price'], 'BETWEEN', $value['minprice'], 'AND', $value['maxprice']);
         }
         $result->execute()->as_array();
+    }
+
+    public function get_city_data() {
+        $cityname = \DB::select('*')
+                ->from('city')
+                ->execute();
+        return $cityname->as_array();
+    }
+
+    public function get_city_area() {
+        $cityArea = \DB::select('*')
+                ->from('city_area')
+                ->execute();
+        return $cityArea->as_array();
+    }
+
+    public function get_city_locality() {
+        $locality = \DB::select('*')
+                ->from('locality')
+                ->execute();
+        return $locality->as_array();
     }
 }

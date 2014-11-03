@@ -13,18 +13,18 @@ public function get_city_data()
                 ->execute();
         return $cityname->as_array();
     }
-//public function get_city_area()
-//    {
-//        $cityArea = \DB::select('*')
-//                ->from('city_area')
-//                ->execute();
-//        return $cityArea->as_array();
-//    }
-//public function get_city_locality()
-//    {
-//        $locality = \DB::select('*')
-//                ->from('locality')
-//                ->execute();
-//        return $locality->as_array();
-//    }
+public function get_city_area()
+    {
+        $cityArea = \DB::select('*')
+                ->from('city_area')
+                ->execute();
+        return $cityArea->as_array();
+    }
+public function get_city_locality()
+    {
+        $locality = \DB::select('*')
+                ->from('locality')
+                ->execute();
+        return $locality->as_array();
+    }
 }
