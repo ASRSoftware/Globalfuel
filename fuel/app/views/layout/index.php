@@ -69,7 +69,7 @@
         <div class="row">
             
             <?php echo $sidebar ?>
-           
+            
             <div class="col-md-8">
                 <div class="caption">
                     <h3 class="uppercase">
@@ -102,8 +102,7 @@
         <div class="row">
             <hr class="hidden-md hidden-lg hidden-xs">
             <?php echo $recent_listing ?>
-            <?php echo $best_offer ?>
-           
+            <?php echo $best_offer ?>                  
         </div>
     </div>
 

@@ -1,22 +1,23 @@
 <div class="col-md-4 sidebar-top-<?php echo $size; ?>">
     <div class="sidebar">
-        <div class="input-group">
+<!--        <div class="input-group">
             <input type="text" class="form-control" placeholder="search for property">
             <span class="input-group-btn">
                 <button class="btn btn-Global" type="button"><i class="fa fa-search"></i></button>
             </span>
-        </div>
+        </div>-->
         <form>
             <h4 class="uppercase motive section-top"><strong>Find your new home</strong></h4>
             <br>
             <span class="select-box input-right" title="City">
                 <select name="City" data-placeholder="City">
                     <option>City</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                    <?php 
+                    foreach ($cityname as $value)
+                    {
+                        echo '<option value='.$value['city_id'].'>'.$value['city_name'].'</option>';
+                    }
+                    ?> 
                 </select>
             </span>
 
@@ -31,6 +32,17 @@
                 </select>
             </span>
 
+               
+                    <span class="select-box input-right" title="Bathrooms">
+                        <select name="area" data-placeholder="area">
+                            <option>Area</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </span>
 
             <span title="buyrent">
                 <input type="radio" name="buyrent" value="buy">Buy
@@ -51,18 +63,6 @@
                     <span class="select-box input-right" title="Bedrooms">
                         <select name="Bedrooms" data-placeholder="Bedrooms">
                             <option>Bedrooms</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </span>
-                </div>
-                <div class="col-md-6">
-                    <span class="select-box input-right" title="Bathrooms">
-                        <select name="Bathrooms" data-placeholder="Bathrooms">
-                            <option>Bathrooms</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>

@@ -85,26 +85,31 @@ class Model_CommonFunction extends Model {
 
     public function search($table, $where, $value) {
         
-        $search = array('mode'=>'mode');
         
-        
-        
-        $result = \DB::select_array($select)
+        $result = \DB::select('*')
                 ->from($table['table']);
         
-        
-                if(){
-                    
-                $result->where($where['mode'], '=', $value['mode']);
-                }else{
-                $result->where($where['mode'], '=', $value['mode']);
-                $result->where($where['mode'], '=', $value['mode']);
-                    
-                }
                 
-                
-           
-                $result->execute()->as_array();
+        if($where['mode']!=null)
+        {
+            $result->where($where['mode'], '=', $value['mode']);
+        }
+        if($where['mode']!=null)
+        {
+            $result->where($where['location'], '=', $value['location']);
+        }
+        if($where['mode']!=null)
+        {
+            $result->where($where['area'], '=', $value['area']);
+        }
+        if($where['mode']!=null)
+        {
+            $result->where($where['bedroom'], '=', $value['bedroom'],'AND');
+        }
+        if($where['mode']!=null)
+        {
+            $result->where($where['price'], 'BETWEEN', $value['minprice'],'AND', $value['maxprice']);
+        }
+        $result->execute()->as_array();
     }
-
 }
