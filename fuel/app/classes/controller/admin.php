@@ -93,8 +93,9 @@ class Controller_Admin extends Controller {
         if ($subname == null) {
             $view = View::forge('admin/layout/dashboard');
             $view->menu = View::forge('admin/layout/menu');
+            
             $view->container = View::forge('admin/bunglow/bunglowform');
-
+            $view->container->bunglowmaster=View::forge('admin/bunglow/bunglowmaster');
             
             return $view;
         } else {
