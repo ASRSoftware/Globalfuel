@@ -33,6 +33,60 @@ DELETE FROM `alert`;
 /*!40000 ALTER TABLE `alert` ENABLE KEYS */;
 
 
+-- Dumping structure for table globalrealestate.amenities
+CREATE TABLE IF NOT EXISTS `amenities` (
+  `amenities_id` int(11) NOT NULL AUTO_INCREMENT,
+  `property_id` int(11) NOT NULL DEFAULT '0',
+  `project_id` int(11) NOT NULL DEFAULT '0',
+  `bunglow_id` int(11) NOT NULL DEFAULT '0',
+  `swimming_pool` tinytext NOT NULL,
+  `gym` tinytext NOT NULL,
+  `wifi` tinytext NOT NULL,
+  `Mandir` tinytext NOT NULL,
+  `Kids_play_area` tinytext NOT NULL,
+  `Jogging_track` tinytext NOT NULL,
+  `Indoor_games` tinytext NOT NULL,
+  `terrace_garden` tinytext NOT NULL,
+  `internal_raod` tinytext NOT NULL,
+  `CCTV` tinytext NOT NULL,
+  `community_holl` tinytext NOT NULL,
+  PRIMARY KEY (`amenities_id`),
+  KEY `Pro_ami_FK` (`property_id`),
+  KEY `Project_ami_FK` (`project_id`),
+  KEY `BNG_AMI_FK` (`bunglow_id`),
+  CONSTRAINT `Pro_ami_FK` FOREIGN KEY (`property_id`) REFERENCES `property` (`property_id`),
+  CONSTRAINT `Project_ami_FK` FOREIGN KEY (`project_id`) REFERENCES `project` (`project_id`),
+  CONSTRAINT `BNG_AMI_FK` FOREIGN KEY (`bunglow_id`) REFERENCES `baunglow_master` (`Baunglow_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table globalrealestate.amenities: ~0 rows (approximately)
+DELETE FROM `amenities`;
+/*!40000 ALTER TABLE `amenities` DISABLE KEYS */;
+/*!40000 ALTER TABLE `amenities` ENABLE KEYS */;
+
+
+-- Dumping structure for table globalrealestate.baunglow_master
+CREATE TABLE IF NOT EXISTS `baunglow_master` (
+  `Baunglow_id` int(10) NOT NULL,
+  `Location_id` int(10) NOT NULL,
+  `City_id` int(10) NOT NULL,
+  `Baunglow_name` varchar(200) NOT NULL,
+  `Developer_name` varchar(200) NOT NULL,
+  `Possession_status` varchar(200) NOT NULL,
+  `Baunglow_area` int(50) NOT NULL,
+  PRIMARY KEY (`Baunglow_id`),
+  KEY `Fk_location_id` (`Location_id`),
+  KEY `Fk_city_id` (`City_id`),
+  CONSTRAINT `Fk_city_id` FOREIGN KEY (`City_id`) REFERENCES `city` (`city_id`),
+  CONSTRAINT `Fk_location_id` FOREIGN KEY (`Location_id`) REFERENCES `locality` (`locality_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table globalrealestate.baunglow_master: ~0 rows (approximately)
+DELETE FROM `baunglow_master`;
+/*!40000 ALTER TABLE `baunglow_master` DISABLE KEYS */;
+/*!40000 ALTER TABLE `baunglow_master` ENABLE KEYS */;
+
+
 -- Dumping structure for table globalrealestate.city
 CREATE TABLE IF NOT EXISTS `city` (
   `city_id` int(50) NOT NULL AUTO_INCREMENT,
@@ -222,8 +276,8 @@ CREATE TABLE IF NOT EXISTS `project` (
   KEY `PROJECT_CITY_ID` (`city_id`),
   KEY `PROJECT_CITY_AREA_ID` (`city_area_id`),
   KEY `PROJECT_CITY_LOCALITY_ID` (`locality_id`),
-  CONSTRAINT `PROJECT_CITY_ID` FOREIGN KEY (`city_id`) REFERENCES `city` (`city_id`),
   CONSTRAINT `PROJECT_CITY_AREA_ID` FOREIGN KEY (`city_area_id`) REFERENCES `city_area` (`city_area_id`),
+  CONSTRAINT `PROJECT_CITY_ID` FOREIGN KEY (`city_id`) REFERENCES `city` (`city_id`),
   CONSTRAINT `PROJECT_CITY_LOCALITY_ID` FOREIGN KEY (`locality_id`) REFERENCES `locality` (`locality_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -256,7 +310,8 @@ CREATE TABLE IF NOT EXISTS `property` (
   `property_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(50) NOT NULL,
   `property_mode` varchar(10) NOT NULL,
-  `image` blob NOT NULL,
+  `image` varchar(150) NOT NULL,
+  `Possession_status` varchar(70) NOT NULL,
   `propertype_id` int(11) NOT NULL,
   `price` int(30) NOT NULL,
   `locality` varchar(500) NOT NULL,
@@ -387,24 +442,6 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 -- Dumping data for table globalrealestate.user: ~0 rows (approximately)
 DELETE FROM `user`;
-
-
-
-CREATE TABLE `Baunglow_master` (
-	`Baunglow_id` INT(10) NOT NULL,
-	`Location_id` INT(10) NOT NULL,
-	`City_id` INT(10) NOT NULL,
-	`Baunglow_name` VARCHAR(200) NOT NULL,
-	`Developer_name` VARCHAR(200) NOT NULL,
-	`Possession_status` VARCHAR(200) NOT NULL,
-	`Baunglow_area` INT(50) NOT NULL,
-	PRIMARY KEY (`Baunglow_id`),
-	INDEX `Fk_location_id` (`Location_id`),
-	INDEX `Fk_city_id` (`City_id`),
-	CONSTRAINT `Fk_city_id` FOREIGN KEY (`City_id`) REFERENCES `city` (`city_id`),
-	CONSTRAINT `Fk_location_id` FOREIGN KEY (`Location_id`) REFERENCES `locality` (`locality_id`)
-)
-
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
