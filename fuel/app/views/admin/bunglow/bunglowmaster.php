@@ -1,4 +1,12 @@
 <div class="form-group">
+    <label class="radio-inline">
+  <input type="radio" name="sale" id="inlineRadio1" value="sale">For Sale
+</label>
+<label class="radio-inline">
+  <input type="radio" name="rent" id="inlineRadio2" value="rent"> Rent
+</label>
+</div>
+<div class="form-group">
     <label for="bunglowname">Bungalow Name* :</label>
     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Bungalow name" name="bunglowname" required>
 </div>

@@ -96,7 +96,10 @@ class Controller_Admin extends Controller {
             
             $view->container = View::forge('admin/bunglow/bunglowform');
             $view->container->bunglowmaster=View::forge('admin/bunglow/bunglowmaster');
-            
+            $aminities=View::forge('admin/bunglow/amenities');
+            $view->container->aminities =$aminities;
+            $bungalowfeature = View::forge('admin/bunglow/bungalowfeature');
+            $view->container->bungalowfeature =$bungalowfeature;
             return $view;
         } else {
             echo 'no ull' . $subname;
