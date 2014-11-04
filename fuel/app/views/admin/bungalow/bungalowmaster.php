@@ -1,10 +1,10 @@
 <div class="form-group">
     <label class="radio-inline">
-  <input type="radio" name="sale" id="inlineRadio1" value="sale">For Sale
-</label>
-<label class="radio-inline">
-  <input type="radio" name="rent" id="inlineRadio2" value="rent"> Rent
-</label>
+        <input type="radio" required="" name="sale" id="inlineRadio1" value="sale" >For Sale
+    </label>
+    <label class="radio-inline">
+        <input type="radio" name="sale" id="inlineRadio2" value="rent"> Rent
+    </label>
 </div>
 <div class="form-group">
     <label for="bunglowname">Bungalow Name* :</label>
@@ -14,28 +14,28 @@
     <label for="bunglowname">Developer Name* :</label>
     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Developer name" name="developername" required>
 </div>
-<div class="form-group">
-    <label for="Possession_status">Possession status* :</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Possession status" name="possession_status" required>
+
+<legend>Area</legend>
+<div class="row">
+    <div class="col-md-4"><label for="Bungalow_area" >Bungalow area*:</label></div>
+    <div class="col-md-4"><input type="text" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Bungalow area" name="bungalow_area" required></div>
+    <div class="col-md-4">
+        <select name="" id="" class="form-control" required>
+            <option value="">select unit</option>
+            <option value="">sq. ft</option>
+            <option value="">meter</option>
+            <option value="">mile</option>
+            <option value="">yard</option>
+        </select>
+    </div>
+
 </div>
-<div class="form-group">
-    <label for="Bungalow_area">Bungalow area*:</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Bungalow area" name="bungalow_area" required>
-</div>
-<div class="form-group">
+<legend>Location</legend>
+<div class="form-group " >
+
     <label for="Baunglow_area">Location of Bungalow*:</label>
-    <select  class="form-control" name="location">
+    <select  class="form-control" name="location" required>
         <option>Select Location</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-    </select>
-</div>
-<div class="form-group">
-    <label for="Baunglow_area">City*:</label>
-    <select  class="form-control" name="city">
-        <option>Select city</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
@@ -44,12 +44,77 @@
 </div>
 
 <div class="form-group">
-    <label for="exampleInputFile">Upload Bungalow Image</label>
-    <input type="file" id="exampleInputFile" multiple="multiple">
-    <p class="help-block">To Upload Multiple images, press <kbd>ctrl</kbd></p>
+    <label for="Baunglow_area">City*:</label>
+    <select  class="form-control" name="city" required>
+        <option>Select city</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
 </div>
-<div class="checkbox">
-    <label>
-        <input type="checkbox"> Check me out
-    </label>
+<legend>Sale Price</legend>
+<div class="row">
+    <div class="col-md-3">Expected Price*:</div>
+    <div class="col-md-3">
+        <select name="" id="" class="form-control" required>
+            <option value="">Crore</option>
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">more</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select name="" id="" class="form-control" required>
+            <option value="">Lac</option>
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">more</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select name="" id="" class="form-control" required>
+            <option value="">Thousands</option>
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">more</option>
+        </select>
+    </div>
+    <br /><br /><br />
+    <div class="row">
+        <div class="col-md-2 col-md-offset-3"> <label for="inptprice">Or</label></col-md-3></div>
+        <div class="col-md-5"><label for="inptprice"><input type="text" class="form-control" name='price' placeholder="Enter price" /></label></div>
+    </div>
+     
 </div>
+<div class="row">
+    <div class="col-md-3"> Price per Sq-ft:</div>
+    <div class="col-md-5"> <input type="text" class="form-control" name='pricesqft' placeholder="Enter price sq.ft" /></div>
+</div>
+<legend>Transaction Type , Property Availability or Age of Construction</legend>
+<div class="row">
+    <div class="col-md-4"><label>Transaction Type*:</label> </div>
+    <div class="col-md-6">
+        <label fo class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="New Bungalow"> New Bungalow
+        </label>
+        <label fo class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Resale Bungalow"> Resale Bungalow
+        </label>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4"><label>Possession Status*:</label></div>
+    <div class="col-md-8">
+        <label fo class="radio-inline">
+            <input type="radio" name="Possession" id="inlineRadio1" value="Under Construction"> Under Construction
+        </label>
+        <label fo class="radio-inline">
+            <input type="radio" name="Possession" id="inlineRadio1" value="Ready To Move"> Ready To Move
+        </label>
+    </div>
+</div>
+
