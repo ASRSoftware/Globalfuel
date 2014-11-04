@@ -126,9 +126,16 @@ class Controller_Admin extends Controller {
     
      public function action_project() {
 
-        $view = View::forge('admin/layout/dashboard');
+          $view = View::forge('admin/layout/dashboard');
         $view->menu = View::forge('admin/layout/menu');
-        $view->container = View::forge('admin/Project/Propertypost');
+        $view->container = View::forge('admin/Project/master');
+        $personal = View::forge('admin/Project/personaldetail');
+        $view->container->personal =  $personal;
+        $aminities = View::forge('admin/Project/propertyamenities');
+        $view->container->aminities = $aminities;
+        $projectfeature = View::forge('admin/Project/projectfeature');
+        $view->container->projectfeature = $projectfeature;
+
         return $view;
         //return Response::forge(Presenter::forge('welcome/hello'));
     }
