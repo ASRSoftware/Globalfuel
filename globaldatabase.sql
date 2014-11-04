@@ -54,9 +54,9 @@ CREATE TABLE IF NOT EXISTS `amenities` (
   KEY `Pro_ami_FK` (`property_id`),
   KEY `Project_ami_FK` (`project_id`),
   KEY `BNG_AMI_FK` (`bunglow_id`),
-  CONSTRAINT `Pro_ami_FK` FOREIGN KEY (`property_id`) REFERENCES `property` (`property_id`),
+  CONSTRAINT `BNG_AMI_FK` FOREIGN KEY (`bunglow_id`) REFERENCES `baunglow_master` (`Baunglow_id`),
   CONSTRAINT `Project_ami_FK` FOREIGN KEY (`project_id`) REFERENCES `project` (`project_id`),
-  CONSTRAINT `BNG_AMI_FK` FOREIGN KEY (`bunglow_id`) REFERENCES `baunglow_master` (`Baunglow_id`)
+  CONSTRAINT `Pro_ami_FK` FOREIGN KEY (`property_id`) REFERENCES `property` (`property_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table globalrealestate.amenities: ~0 rows (approximately)
@@ -71,6 +71,7 @@ CREATE TABLE IF NOT EXISTS `baunglow_master` (
   `Location_id` int(10) NOT NULL,
   `City_id` int(10) NOT NULL,
   `Baunglow_name` varchar(200) NOT NULL,
+  `price` int(20) NOT NULL,
   `Developer_name` varchar(200) NOT NULL,
   `Possession_status` varchar(200) NOT NULL,
   `Baunglow_area` int(50) NOT NULL,
@@ -270,6 +271,7 @@ CREATE TABLE IF NOT EXISTS `project` (
   `project_id` int(11) NOT NULL AUTO_INCREMENT,
   `city_id` int(11) NOT NULL DEFAULT '0',
   `city_area_id` int(11) NOT NULL DEFAULT '0',
+  `price` int(20) NOT NULL DEFAULT '0',
   `locality_id` int(11) NOT NULL DEFAULT '0',
   `project_name` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`project_id`),
@@ -291,7 +293,6 @@ DELETE FROM `project`;
 CREATE TABLE IF NOT EXISTS `project_details` (
   `project_detail_id` int(11) NOT NULL AUTO_INCREMENT,
   `project_id` int(11) NOT NULL DEFAULT '0',
-  `amenities_id` int(11) NOT NULL DEFAULT '0',
   `insertion_date` datetime DEFAULT NULL,
   `modify_date` datetime DEFAULT NULL,
   PRIMARY KEY (`project_detail_id`),
