@@ -110,27 +110,25 @@ class Controller_Admin extends Controller {
         if ($subname == null) {
             $view = View::forge('admin/layout/dashboard');
             $view->menu = View::forge('admin/layout/menu');
-            
+
             $view->container = View::forge('admin/user/createuser');
-            $view->container->createuser=View::forge('admin/user/createuserform');
-            $loginform=View::forge('admin/user/loginform');
-            $view->container->loginform =$loginform;
-            
+            $view->container->createuser = View::forge('admin/user/createuserform');
+            $loginform = View::forge('admin/user/loginform');
+            $view->container->loginform = $loginform;
+
             return $view;
         } else {
             echo 'no ull' . $subname;
         }
     }
-    
 
-    
-     public function action_project() {
+    public function action_project() {
 
-          $view = View::forge('admin/layout/dashboard');
+        $view = View::forge('admin/layout/dashboard');
         $view->menu = View::forge('admin/layout/menu');
         $view->container = View::forge('admin/Project/master');
         $personal = View::forge('admin/Project/personaldetail');
-        $view->container->personal =  $personal;
+        $view->container->personal = $personal;
         $aminities = View::forge('admin/Project/propertyamenities');
         $view->container->aminities = $aminities;
         $projectfeature = View::forge('admin/Project/projectfeature');
@@ -139,6 +137,7 @@ class Controller_Admin extends Controller {
         return $view;
         //return Response::forge(Presenter::forge('welcome/hello'));
     }
+
     /**
      * The 404 action for the application.
      *
