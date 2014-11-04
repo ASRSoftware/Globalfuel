@@ -88,7 +88,7 @@ class Controller_Admin extends Controller {
         $view->footer = View::Forge('layout/footer');
         return $view;
     }
-
+    
     public function action_bungalow($subname = null) {
         if ($subname == null) {
             $view = View::forge('admin/layout/dashboard');
@@ -100,6 +100,23 @@ class Controller_Admin extends Controller {
             $view->container->aminities = $aminities;
             $bungalowfeature = View::forge('admin/bungalow/bungalowfeature');
             $view->container->bungalowfeature = $bungalowfeature;
+            return $view;
+        } else {
+            echo 'no ull' . $subname;
+        }
+    }
+
+    public function action_sell($subname = null) {
+        if ($subname == null) {
+            $view = View::forge('admin/layout/dashboard');
+            $view->menu = View::forge('admin/layout/menu');
+
+            $view->container = View::forge('admin/sellproperty/sellproperty');
+            $view->container->propertymaster = View::forge('admin/sellproperty/propertymaster');
+            $aminities = View::forge('admin/sellproperty/amenities');
+            $view->container->aminities = $aminities;
+            $propertyfeature = View::forge('admin/sellproperty/propertyfeature');
+            $view->container->propertyfeature = $propertyfeature;
             return $view;
         } else {
             echo 'no ull' . $subname;
