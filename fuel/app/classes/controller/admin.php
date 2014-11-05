@@ -106,39 +106,72 @@ class Controller_Admin extends Controller {
         }
     }
 
-    public function action_createuser($subname = null) {
+    public function action_sell($subname = null) {
         if ($subname == null) {
+            $propety_type = new Model_CommonFunction();
+            $propertydata = $propety_type->get_data(array('table' => 'property_type'), array('propertype_id', 'property_id', 'propertype_name'));
+            $citydata = $propety_type->get_data(array('table' => 'property_type'), array('propertype_id', 'property_id', 'propertype_name'));
+
             $view = View::forge('admin/layout/dashboard');
             $view->menu = View::forge('admin/layout/menu');
-            
-            $view->container = View::forge('admin/user/createuser');
-            $view->container->createuser=View::forge('admin/user/createuserform');
-            $loginform=View::forge('admin/user/loginform');
-            $view->container->loginform =$loginform;
-            
+
+            $view->container = View::forge('admin/sellproperty/sellproperty');
+            $form = View::forge('admin/sellproperty/propertymaster');
+            $form->propertytype = $propertydata;
+
+            $view->container = $form;
+            $aminities = View::forge('admin/sellproperty/amenities');
+            $view->container->aminities = $aminities;
+            $propertyfeature = View::forge('admin/sellproperty/propertyfeature');
+            $view->container->propertyfeature = $propertyfeature;
             return $view;
         } else {
             echo 'no ull' . $subname;
         }
     }
-    
 
-    
-     public function action_project() {
+    public function action_createuser($subname = null) {
+        if ($subname == null) {
+            $view = View::forge('admin/layout/dashboard');
+            $view->menu = View::forge('admin/layout/menu');
 
-          $view = View::forge('admin/layout/dashboard');
-        $view->menu = View::forge('admin/layout/menu');
-        $view->container = View::forge('admin/Project/master');
-        $personal = View::forge('admin/Project/personaldetail');
-        $view->container->personal =  $personal;
-        $aminities = View::forge('admin/Project/propertyamenities');
-        $view->container->aminities = $aminities;
-        $projectfeature = View::forge('admin/Project/projectfeature');
-        $view->container->projectfeature = $projectfeature;
+            $view->container = View::forge('admin/user/createuser');
+            $view->container->createuser = View::forge('admin/user/createuserform');
+            $loginform = View::forge('admin/user/loginform');
+            $view->container->loginform = $loginform;
 
-        return $view;
+            return $view;
+        } else {
+            echo 'no ull' . $subname;
+        }
+    }
+
+    public function action_project($subname = null) {
+        if ($subname == null) {
+            $propety_type = new Model_CommonFunction();
+            $propertydata = $propety_type->get_data(array('table' => 'property_type'), array('propertype_id', 'property_id', 'propertype_name'));
+            $citydata = $propety_type->get_data(array('table' => 'city'), array('city_id', 'city_name'));
+
+
+            $view = View::forge('admin/layout/dashboard');
+            $view->menu = View::forge('admin/layout/menu');
+            $view->container = View::forge('admin/Project/master');
+            $form = View::forge('admin/Project/personaldetail');
+            $form->propertytype = $propertydata;
+            $form->cityname = $citydata;
+            $view->container->form = $form;
+            $aminities = View::forge('admin/Project/propertyamenities');
+            $view->container->aminities = $aminities;
+            $projectfeature = View::forge('admin/Project/projectfeature');
+            $view->container->projectfeature = $projectfeature;
+
+            return $view;
+        } else {
+            echo 'no valid ' . $subname;
+        }
         //return Response::forge(Presenter::forge('welcome/hello'));
     }
+
     /**
      * The 404 action for the application.
      *
