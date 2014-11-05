@@ -9,7 +9,7 @@
                 <div class="row">
                     <label style="margin-left: 60px;"><h3><b><font color="#4285f4">Personal Details</font></b></h3></label>
 
-                    <?php echo $personal ?>  
+                    <?php echo  $form ?>  
 
                 </div>
                 <div class="row">
