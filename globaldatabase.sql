@@ -258,11 +258,14 @@ CREATE TABLE IF NOT EXISTS `locality` (
   PRIMARY KEY (`locality_id`),
   KEY `CITY_AREA_FK` (`city_area_id`),
   CONSTRAINT `CITY_AREA_FK` FOREIGN KEY (`city_area_id`) REFERENCES `city_area` (`city_area_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table globalrealestate.locality: ~0 rows (approximately)
+-- Dumping data for table globalrealestate.locality: ~2 rows (approximately)
 DELETE FROM `locality`;
 /*!40000 ALTER TABLE `locality` DISABLE KEYS */;
+INSERT INTO `locality` (`locality_id`, `city_area_id`, `name`, `insertion_date`, `modify_date`) VALUES
+	(1, 15, 'sector 11', '2014-11-05 16:18:03', '0000-00-00 00:00:00'),
+	(2, 15, 'sector 7', '2014-11-05 16:18:31', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `locality` ENABLE KEYS */;
 
 

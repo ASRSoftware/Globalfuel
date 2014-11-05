@@ -1,71 +1,62 @@
-
+<html>
+    <head>
         <?php echo Fuel\Core\Asset::js('jquery.min.js') ?>
         <?php  echo Fuel\Core\Asset::js('city_area.js') ?>
-
+    </head>
+    <body>
         <div class="col-md-4 sidebar-top-<?php echo $size; ?>">
             <div class="sidebar">
-                <!--        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="search for property">
-                            <span class="input-group-btn">
-                                <button class="btn btn-Global" type="button"><i class="fa fa-search"></i></button>
-                            </span>
-                        </div>-->
-
-                <form>
+                <form action ="<?php echo Uri::base(false);?>search" method="POST">
                     <h4 class="uppercase motive section-top"><strong>Find your new home</strong></h4>
                     <br>
-                    <span class="select-box input-right" title="City">
-                        <select name="City" data-placeholder="City"  onchange="<?php echo '<script type="text/javascript">    loadCityArea();      </script>' ?>">
+                    <span class="input-right" title="City" >
+                        <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value)"> 
                             <option>City</option>
                             <?php
-                            $cityname = new loadData();
-                            $city = $cityname->get_city_data();
-                            foreach ($city as $value) {
-                                echo '<option value=' . $value['city_id'] . '>' . $value['city_name'] . '</option>';
-                            }
+                                $cityname = new loadData();
+                                $city = $cityname->get_city_data();
+                                foreach ($city as $value) {
+                                    echo '<option value=' . $value['city_id'] . '>' . $value['city_name'] . '</option>';
+                                }
                             ?> 
                         </select>
                     </span>
-
-                    <span class="select-box input-right" title="Location">
-                        <select name="Location" id="location" data-placeholder="Location">
+                    <br>
+                    <span class=" input-right" title="Location">
+                        <select class="form-control" name="location" id="location" data-placeholder="Location" onchange="loadlocality(this.value)">
                             <option>Location</option>
-
                         </select>
                     </span>
+                   <br>
 
 
-                    <span class="select-box input-right" title="Bathrooms">
-                        <select name="area" data-placeholder="area">
+                    <span class="input-right" >
+                        <select class="form-control" id="area" name="area" data-placeholder="area">
                             <option>Area</option>
 
                         </select>
                     </span>
-
+<br>
                     <span title="buyrent">
                         <input type="radio" name="buyrent" value="buy">Buy
                         <input type="radio" name="buyrent" value="rent">Rent
                     </span> 
-                    <span class="select-box input-right" title="Type">
-                        <select name="Type" data-placeholder="Type">
-                            <option>Type</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </span>
+                    
                     <div class="row">
                         <div class="col-md-6">
-                            <span class="select-box input-right" title="Bedrooms">
-                                <select name="Bedrooms" data-placeholder="Bedrooms">
+                            <span class="input-right" title="Bedrooms">
+                                <select class="form-control" id="bedrooms" name="bedrooms" data-placeholder="Bedrooms">
                                     <option>Bedrooms</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>
+                                    <option value="3">6</option>
+                                    <option value="4">7</option>
+                                    <option value="5">8</option>
+                                    <option value="5">9</option>
+                                    <option value="5">10</option>
                                 </select>
                             </span>
                         </div>
@@ -97,3 +88,4 @@
         </div>
 
     </body>
+</html>
