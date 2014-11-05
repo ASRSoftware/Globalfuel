@@ -1,5 +1,12 @@
 <div class="row" >
     <div class="col-md-6">
+         <div class="checkbox"> 
+            <label >
+                <input type="checkbox" value="">
+               Lift
+            </label>
+            
+        </div> <br />
         <div class="checkbox"> 
             <label >
                 <input type="checkbox" value="">
@@ -35,6 +42,9 @@
             </label>
             
         </div><br />
+        
+    </div>
+    <div class="col-md-6">
         <div class="checkbox"> 
             <label>
                 <input type="checkbox" value="">
@@ -42,8 +52,6 @@
             </label>
             
         </div><br />
-    </div>
-    <div class="col-md-6">
         <div class="checkbox"> 
             <label>
                 <input type="checkbox" value="">

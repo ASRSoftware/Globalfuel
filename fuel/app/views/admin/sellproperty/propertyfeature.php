@@ -62,6 +62,32 @@
         </select>
     </div>
 </div><br />
+<div class="row">
+    <div class="col-md-4"><label> Total Floors in your building*:</label></div>
+    <div class="col-md-4">
+        <select name="" id="" class="form-control" required>
+            <option value="">Select Floor No.</option>
+            <option value=""> 1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">more</option>
+
+        </select>
+    </div>
+</div><br />
+<div class="row">
+    <div class="col-md-4"><label> Floors No.of your property*:</label></div>
+    <div class="col-md-4">
+        <select name="" id="" class="form-control" required>
+            <option value="">Select Floor No.</option>
+            <option value=""> 1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">more</option>
+
+        </select>
+    </div>
+</div><br />
 <legend>Description</legend>
 <div class="row">
     <div class="col-md-4">
@@ -76,9 +102,4 @@
     <label for="exampleInputFile">Upload Bungalow Image</label>
     <input type="file" id="exampleInputFile" multiple="multiple">
     <p class="help-block">To Upload Multiple images, press <kbd>ctrl</kbd></p>
-</div>
-<div class="checkbox">
-    <label>
-        <input type="checkbox"> Check me out
-    </label>
 </div>

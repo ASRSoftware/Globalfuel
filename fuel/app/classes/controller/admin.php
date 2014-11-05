@@ -88,7 +88,7 @@ class Controller_Admin extends Controller {
         $view->footer = View::Forge('layout/footer');
         return $view;
     }
-    
+
     public function action_bungalow($subname = null) {
         if ($subname == null) {
             $view = View::forge('admin/layout/dashboard');
@@ -108,11 +108,18 @@ class Controller_Admin extends Controller {
 
     public function action_sell($subname = null) {
         if ($subname == null) {
+            $propety_type = new Model_CommonFunction();
+            $propertydata = $propety_type->get_data(array('table' => 'property_type'), array('propertype_id', 'property_id','propertype_name'));
+            $citydata = $propety_type->get_data(array('table' => 'property_type'), array('propertype_id', 'property_id','propertype_name'));
+            
             $view = View::forge('admin/layout/dashboard');
             $view->menu = View::forge('admin/layout/menu');
 
             $view->container = View::forge('admin/sellproperty/sellproperty');
-            $view->container->propertymaster = View::forge('admin/sellproperty/propertymaster');
+            $form = View::forge('admin/sellproperty/propertymaster');
+            $form->propertytype = $propertydata;
+
+            $view->container->propertymaster = $form;
             $aminities = View::forge('admin/sellproperty/amenities');
             $view->container->aminities = $aminities;
             $propertyfeature = View::forge('admin/sellproperty/propertyfeature');
