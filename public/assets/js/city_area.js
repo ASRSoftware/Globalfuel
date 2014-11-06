@@ -3,8 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+function print()
+{
+    alert('PRINT');
+}
 function loadCityArea(id){
+    
+    $('#location')[0].options.length = 0;
+    $('#location').append('<option>Location</option>');
   $.ajax({
      type: "GET",
      url: "http://localhost/Globalfuel/public/welcome/getcity/"+id,
@@ -20,6 +26,8 @@ function loadCityArea(id){
    });
 }
 function loadlocality(id){
+    $('#area')[0].options.length = 0;
+    $('#area').append('<option>Area</option>');
   $.ajax({
      type: "GET",
      url: "http://localhost/Globalfuel/public/welcome/getcityarea/"+id,

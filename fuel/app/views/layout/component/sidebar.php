@@ -10,7 +10,7 @@
                     <h4 class="uppercase motive section-top"><strong>Find your new home</strong></h4>
                     <br>
                     <span class="input-right" title="City" >
-                        <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value)"> 
+                        <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value);"> 
                             <option>City</option>
                             <?php
                                 $cityname = new loadData();

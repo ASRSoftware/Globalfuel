@@ -28,8 +28,8 @@
     <div class="col-md-8">
         <select name="" id="" class="form-control">
             <?php 
-            foreach ($propertytype as $key=>$value){ ?>
-                <option value="<?php  echo $value['property_id'] ?>"><?php echo $value['propertype_name']  ?></option>
+            foreach ($property_sub_type as $key=>$value){ ?>
+                <option value="<?php  echo $value['property_subtype_id'] ?>"><?php echo $value['property_name']  ?></option>
            <?php }  ?>
         </select>
     </div>
@@ -42,11 +42,10 @@
     <div class="col-md-4"><input type="text" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Covered area" name="covered_area" required></div>
     <div class="col-md-4">
         <select name="" id="" class="form-control" required>
-            <option value="">select unit</option>
-            <option value="">sq. ft</option>
-            <option value="">meter</option>
-            <option value="">mile</option>
-            <option value="">yard</option>
+            <?php 
+            foreach($unit as $key=>$value){ ?>
+                <option><?php echo $value['unit_name']?> </option>
+            <?php }?>
         </select>
     </div>
 
@@ -56,11 +55,10 @@
     <div class="col-md-4"><input type="text" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Plot area" name="plot_area" ></div>
     <div class="col-md-4">
         <select name="" id="" class="form-control" >
-            <option value="">select unit</option>
-            <option value="">sq. ft</option>
-            <option value="">meter</option>
-            <option value="">mile</option>
-            <option value="">yard</option>
+            <?php 
+            foreach($unit as $key=>$value){?>
+                <option value="<?php echo $value['unit_id']?>"><?php echo $value['unit_name']?></option>
+            <?php } ?>
         </select>
     </div>
 
@@ -70,39 +68,34 @@
     <div class="col-md-4"><input type="text" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Carpet area" name="carpet_area" ></div>
     <div class="col-md-4">
         <select name="" id="" class="form-control" >
-            <option value="">select unit</option>
-            <option value="">sq. ft</option>
-            <option value="">meter</option>
-            <option value="">mile</option>
-            <option value="">yard</option>
+            <?php foreach($unit as $key=>$value){?>
+            <option value="<?php echo $value['unit_name']?>"><?php echo $value['unit_name']?></option>
+            <?php } ?>
         </select>
     </div>
 
 </div>
 
 <legend>Location</legend>
+<div class="form-group">
+    <label for="Property_area">City*:</label>
+    <select  class="form-control" name="city" required>
+        <?php foreach($citydata as $key=>$value){ ?>
+        <option value="<?php echo $value['city_id']?>"><?php echo $value['city_name']?></option>
+        <?php } ?>
+    </select>
+</div>
 <div class="form-group " >
 
     <label for="Property_area">Location of Property*:</label>
     <select  class="form-control" name="location" required>
-        <option>Select Location</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <?php foreach($cityarea as $key=>$value){?>
+        <option value="<?php echo $value['city_area_id']?>"><?php echo $value['locality_name']?></option>
+   <?php } ?>
     </select>
 </div>
 
-<div class="form-group">
-    <label for="Property_area">City*:</label>
-    <select  class="form-control" name="city" required>
-        <option>Select city</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-    </select>
-</div>
+
 <div class="form-group " >
 
     <label for="Property_area">Name of Project/Society:</label>
@@ -120,11 +113,9 @@
         <div class="col-md-3">Expected Price*:</div>
         <div class="col-md-3">
             <select name="" id="" class="form-control" required>
-                <option value="">Crore</option>
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-                <option value="">more</option>
+                <?php foreach($number as $key=>$value){?>
+                    <option value="<?php echo $value['number_id']?>"><?php echo $value['number']?></option>
+                    <?php } ?>
             </select>
         </div>
         <div class="col-md-3">
