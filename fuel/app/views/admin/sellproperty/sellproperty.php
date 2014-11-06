@@ -13,6 +13,9 @@
             }
             
         </style>
+        <?php echo Fuel\Core\Asset::js('jquery.min.js') ?>
+        <?php  echo Fuel\Core\Asset::js('city_area.js') ?>
+        <?php  echo Fuel\Core\Asset::js('propertyTypes.js') ?>
     </head>
     <body>
         <div class="container">
