@@ -107,11 +107,17 @@ class Controller_Welcome extends Controller {
         $view->footer = View::Forge('layout/footer');
         return $view;
     }
-    public function action_getCityArea($id){
-      $result =  new Model_CommonFunction();
-      $array = array('city_area_id','name'); 
-      $table=array('table'=>'city_area','where'=>'city_id','value'=>$id);
-      return $result->get_data($table,$array);
+    public function action_getcity($id = null){
+     
+     $result =  new Model_CommonFunction();
+       
+        return json_encode($result->get_citydata($id)); 
+    }
+    public function action_getcityarea($id = null){
+     
+     $result =  new Model_CommonFunction();
+       
+        return json_encode($result->get_cityarea($id)); 
     }
 
     /**

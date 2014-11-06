@@ -27,6 +27,27 @@ class Model_CommonFunction extends Model {
      * 
      * ********************************************** */
 
+    public function get_citydata($id) {
+        
+            $result = \DB::select('*')
+                    ->from('city_area')
+                    ->where('city_id', '=', $id)
+                    ->execute();
+        
+        return $result->as_array();
+    }
+    
+    public function get_cityarea($id) {
+        
+            $result = \DB::select('*')
+                    ->from('locality')
+                    ->where('city_area_id', '=', $id)
+                    ->execute();
+        
+        return $result->as_array();
+    }
+    
+    
     public function get_data($table = array(), $select = array()) {
         if (!isset($table['id'])) {
             $result = \DB::select_array($select)

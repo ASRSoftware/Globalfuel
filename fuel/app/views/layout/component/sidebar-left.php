@@ -1,4 +1,7 @@
-    <div class="container">  <!-- Sidebar start here -->
+ <?php echo Fuel\Core\Asset::js('jquery.min.js') ?>
+ <?php  echo Fuel\Core\Asset::js('city_area.js') ?>    
+
+<div class="container">  <!-- Sidebar start here -->
         <div class="row">
             <div class="col-md-4 sidebar-top-small">
                 <div class="sidebar" style="margin-bottom:10px;">
@@ -10,37 +13,38 @@
                     </div>
                     <h4 class="uppercase motive section-top"><strong>Find your new home</strong></h4>
                     <br>
-                    <span class="select-box input-right" title="City">
-                        <select name="City" data-placeholder="City">
+                    <span class="input-right" title="City" >
+                        <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value)"> 
+                            <option>City</option>
+                            <?php
+                                $cityname = new loadData();
+                                $city = $cityname->get_city_data();
+                                foreach ($city as $value) {
+                                    echo '<option value=' . $value['city_id'] . '>' . $value['city_name'] . '</option>';
+                                }
+                            ?> 
+                        </select>
+                    </span>
+                    
+                    
+                    <br>
+                    <span class=" input-right" title="Location">
+                        <select class="form-control" name="location" id="location" data-placeholder="Location" onchange="loadlocality(this.value)">
                             <option>Location</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
                         </select>
                     </span>
-                    
-                    
-                    <span class="select-box input-right" title="RentBuy">
-                        <select name="RentBuy" data-placeholder="Rent or Buy">
-                            <option value="1"></option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
+                   <br>
+                   <span class="input-right" >
+                        <select class="form-control" id="area" name="area" data-placeholder="area">
+                            <option>Area</option>
+
                         </select>
                     </span>
-                    <span class="select-box input-right" title="Type">
-                        <select name="Type" data-placeholder="Type">
-                            <option>Type</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </span>
+<br>
+                    <span title="buyrent">
+                        <input type="radio" name="buyrent" value="buy">Buy
+                        <input type="radio" name="buyrent" value="rent">Rent
+                    </span> 
                     <div class="row">
                         <div class="col-md-6">
                             <span class="select-box input-right" title="Bedrooms">
@@ -56,13 +60,18 @@
                         </div>
                         <div class="col-md-6">
                             <span class="select-box input-right" title="Bathrooms">
-                                <select name="Bathrooms" data-placeholder="Bathrooms">
-                                    <option>Bathrooms</option>
+                               <select class="form-control" id="bedrooms" name="bedrooms" data-placeholder="Bedrooms">
+                                    <option>Bedrooms</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>
+                                    <option value="3">6</option>
+                                    <option value="4">7</option>
+                                    <option value="5">8</option>
+                                    <option value="5">9</option>
+                                    <option value="5">10</option>
                                 </select>
                             </span>
                         </div>

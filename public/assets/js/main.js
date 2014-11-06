@@ -109,8 +109,10 @@ $.fn.uouSelectBox = function(){
     clone.find( 'li' ).click(function(){
 
         value_holder.val( $(this).text() );
+        console.log (this);
         select.find( 'option[value="' + $(this).attr( 'data-value' ) + '"]' ).attr('selected', 'selected');
-
+        var id = $(this).attr( 'data-value' );
+        $(this).parents('.select-box').children('select').val(id).trigger('change');
         // IF LIST OF LINKS
         if ( self.hasClass( 'links' ) ) {
             window.location.href = select.val();
@@ -754,7 +756,7 @@ jQuery(document).ready(function() {
         $(this).uouRadioInput();
     });
     $( '.select-box' ).each(function(){
-        $(this).uouSelectBox();
+        //$(this).uouSelectBox();
     });
 
     /* ======================== */
