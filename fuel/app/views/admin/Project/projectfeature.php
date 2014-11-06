@@ -87,7 +87,7 @@
         <div class="form-group">
             <label>No of Bathroom</label>
 
-            <select name="location" STYLE="width: 100px" required>
+            <select name="location"   class="form-control" required>
                 <option value="">No of Bathroom</option>
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>
@@ -98,7 +98,7 @@
         <div class="form-group">
             <label>Flat Loading</label><br/>
 
-            <select name="location" STYLE="width: 110px" required>
+            <select name="location"  class="form-control" required>
                 <option value="">Loading % ?</option>
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>
@@ -109,7 +109,7 @@
         <div class="form-group">
             <label>Available Floor </label>
 
-            <select name="available" STYLE="width: 110px" required>
+            <select name="available"   class="form-control" required>
                 <option value="">Floor No</option>
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>
@@ -126,7 +126,7 @@
         <div class="form-group">
             <label>No of Balconies</label>
 
-            <select name="location" STYLE="width: 100px" required>
+            <select name="location"  class="form-control" required>
                 <option value="">No of Balconies</option>
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>
@@ -137,7 +137,7 @@
         <div class="form-group">
             <label>No of Balconies</label>
 
-            <select name="location" STYLE="width: 100px" required>
+            <select name="location"  class="form-control" required>
                 <option value="">No of Balconies</option>
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>
@@ -148,7 +148,7 @@
         <div class="form-group">
             <label>Total No Of the Floor</label>
 
-            <select name="totalfloor" STYLE="width: 100px" required>
+            <select name="totalfloor" class="form-control"   required>
                 <option value="">Total Floor</option>
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>
@@ -209,7 +209,7 @@
         <div class="form-group">
             <label>Select Unit</label><br/>
 
-            <select name="location" required>
+            <select name="location"  class="form-control" required>
                 <option value="">Select Unit</option>
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>
@@ -273,9 +273,10 @@
         <input type="text" class="form-control" name='perunit'style="width: 200px" placeholder="Enter price" />
     </div><br/>
     <div class="row">
+        <div class="form-group">
         <label>Enter Some Effective Description Here*</label><br/>
-        <textarea style="width: 414px; height:131px;  "placeholder="Enter the MeaningFull  Description Here"></textarea>
-
+        <textarea class="form-control" style="width: 414px; height:131px;  "placeholder="Enter the MeaningFull  Description Here"></textarea>
+        </div>
     </div>
 </div><br/>
 
@@ -284,9 +285,11 @@
 
 
 <div class="checkbox">
+    <div class="form-group">
     <label>
-        <input type="checkbox" name="check"value="check"> Every thing is OK
+        <input type="checkbox" name="check"value="check" > Every thing is OK
     </label>
+</div>
 </div>
 <br/>
 <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 40px;">Save Your Post</button>

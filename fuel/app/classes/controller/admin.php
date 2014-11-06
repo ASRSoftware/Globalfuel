@@ -168,7 +168,7 @@ class Controller_Admin extends Controller {
             $citydata = $propety_type->get_data(array('table' => 'city'), array('city_id', 'city_name'));
 
 
-            $view = View::forge('admin/layout/dashboard');
+            $view = View::forge('admin/Project/dashbordproject');
             $view->menu = View::forge('admin/layout/menu');
             $view->container = View::forge('admin/Project/master');
             $form = View::forge('admin/Project/personaldetail');
