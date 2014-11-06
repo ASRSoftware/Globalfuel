@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col-md-4"><label for="propertytype">Type of Property*:</label></div>
     <div class="col-md-8">
-        <select name="" id="propertytype" class="form-control">
+        <select name="propertytype" id="propertytype" class="form-control" onchange="getPropertySubType(this.value);">
            
         </select>
     </div>
@@ -19,11 +19,8 @@
 <div class="row">
     <div class="col-md-4"><label for="propertytype">Property Sub type*:</label></div>
     <div class="col-md-8">
-        <select name="" id="" class="form-control">
-            <?php 
-            foreach ($property_sub_type as $key=>$value){ ?>
-                <option value="<?php  echo $value['property_subtype_id'] ?>"><?php echo $value['property_name']  ?></option>
-           <?php }  ?>
+        <select name="propertysubtype" id="propertysubtype" class="form-control">
+            
         </select>
     </div>
 </div>

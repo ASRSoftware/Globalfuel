@@ -161,7 +161,31 @@ class Controller_Admin extends Controller {
         }
     }
 
-    
+    public function action_project($subname = null) {
+        if ($subname == null) {
+            $propety_type = new Model_CommonFunction();
+            $propertydata = $propety_type->get_data(array('table' => 'property_type'), array('propertype_id',  'propertype_name'));
+            $citydata = $propety_type->get_data(array('table' => 'city'), array('city_id', 'city_name'));
+
+
+            $view = View::forge('admin/Project/dashbordproject');
+            $view->menu = View::forge('admin/layout/menu');
+            $view->container = View::forge('admin/Project/master');
+            $form = View::forge('admin/Project/personaldetail');
+           $form->propertytype = $propertydata;
+            $form->cityname = $citydata;
+            $view->container->form = $form;
+            $aminities = View::forge('admin/Project/propertyamenities');
+            $view->container->aminities = $aminities;
+            $projectfeature = View::forge('admin/Project/projectfeature');
+            $view->container->projectfeature = $projectfeature;
+
+            return $view;
+        } else {
+            echo 'no valid ' . $subname;
+        }
+        //return Response::forge(Presenter::forge('welcome/hello'));
+    }
 
     /**
      * The 404 action for the application.
@@ -173,9 +197,14 @@ class Controller_Admin extends Controller {
         return Response::forge(Presenter::forge('welcome/404'), 404);
     }
 
-    public function action_propertyType($id = null) {
+    public function action_propertyType() {
         $obj = new Model_CommonFunction();
             $propertydata = $obj->get_data(array('table' => 'property_type'), array('propertype_id', 'propertype_name'));
+            return json_encode($propertydata);
+    }
+    public function action_propertySubType($id=null) {
+        $obj = new Model_CommonFunction();
+            $propertydata = $obj->get_data(array('table' =>'property_sub_type','where'=>'propertype_id','value'=>$id), array('property_subtype_id', 'property_name'));
             return json_encode($propertydata);
     }
 

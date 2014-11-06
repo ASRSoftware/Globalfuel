@@ -49,7 +49,7 @@ class Model_CommonFunction extends Model {
     
     
     public function get_data($table = array(), $select = array()) {
-        if (!isset($table['id'])) {
+        if (!isset($table['value'])) {
             $result = \DB::select_array($select)
                     ->from($table['table'])
                     ->execute();
