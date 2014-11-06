@@ -24,12 +24,19 @@
 <div class="col-md-6">
     <div class="form-group">
         <label>Project City</label>
-        <select name="city" class="form-control" required>
-             <option value="">Select City</option>
-            <?php foreach ($cityname as $key => $value) { ?>
-                <option value="<?php echo $value['city_id'] ?>"><?php echo $value['city_name'] ?></option>
-            <?php } ?>
-        </select>
+        <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value)"> 
+                            <option>Select City</option>
+
+                    
+
+                            <?php
+                                $cityname = new loadData();
+                                $city = $cityname->get_city_data();
+                                foreach ($city as $value) {
+                                    echo '<option value=' . $value['city_id'] . '>' . $value['city_name'] . '</option>';
+                                }
+                            ?> 
+                        </select>
 
     </div>
 </div>
@@ -38,14 +45,19 @@
     <div class="form-group">
         <label>City Area</label>
 
-        <select name="city" class="form-control"  required>
-            <option value="">Select City Area</option>
-            <option value="">Select City</option>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-        </select>
+        <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value)"> 
+                            <option>Select City</option>
+
+                    
+
+                            <?php
+                                $cityname = new loadData();
+                                $city = $cityname->get_city_data();
+                                foreach ($city as $value) {
+                                    echo '<option value=' . $value['city_id'] . '>' . $value['city_name'] . '</option>';
+                                }
+                            ?> 
+                        </select>
     </div>
 </div>
     </div>
