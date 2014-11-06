@@ -1,8 +1,4 @@
-<style type="text/css">
-    #rent{
 
-    }
-</style>
 
 <div class="form-group rentandsaleselection">
     <label class="radio-inline">
@@ -16,10 +12,7 @@
     <div class="col-md-4"><label for="propertytype">Type of Property*:</label></div>
     <div class="col-md-8">
         <select name="" id="propertytype" class="form-control">
-            <?php 
-            foreach ($propertytype as $key=>$value){ ?>
-                <option value="<?php  echo $value['property_id'] ?>"><?php echo $value['propertype_name']  ?></option>
-           <?php }  ?>
+           
         </select>
     </div>
 </div><br />
@@ -79,21 +72,39 @@
 <legend>Location</legend>
 <div class="form-group">
     <label for="Property_area">City*:</label>
-    <select  class="form-control" name="city" required>
-        <?php foreach($citydata as $key=>$value){ ?>
-        <option value="<?php echo $value['city_id']?>"><?php echo $value['city_name']?></option>
-        <?php } ?>
-    </select>
-</div>
-<div class="form-group " >
+   <span class="input-right" title="City">
+                        <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value);"> 
+                            <option>Select City</option>
+                            <?php
+                                $cityname = new loadData();
+                                $city = $cityname->get_city_data();
+                                foreach ($city as $value) {
+                                    echo '<option value=' . $value['city_id'] . '>' . $value['city_name'] . '</option>';
+                                }
+                            ?> 
+                        </select>
+                    </span>
+                    <br>
+                    <span class=" input-right" title="Location">
+                        <select class="form-control" name="location" id="location" data-placeholder="Location" onchange="loadlocality(this.value)">
+                            <option>Location</option>
+                        </select>
+                    </span>
+                   <br>
+                   <br>
 
-    <label for="Property_area">Location of Property*:</label>
-    <select  class="form-control" name="location" required>
-        <?php foreach($cityarea as $key=>$value){?>
-        <option value="<?php echo $value['city_area_id']?>"><?php echo $value['locality_name']?></option>
-   <?php } ?>
-    </select>
+
+                    <span class="input-right" >
+                        <select class="form-control" id="area" name="area" data-placeholder="area">
+                            <option>Area</option>
+
+                        </select>
+                    </span>
+ <!--    <select  class="form-control" name="city" required>
+       
+    </select>-->
 </div>
+
 
 
 <div class="form-group " >

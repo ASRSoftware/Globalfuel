@@ -9,9 +9,9 @@
                 <form action ="<?php echo Uri::base(false);?>search" method="POST">
                     <h4 class="uppercase motive section-top"><strong>Find your new home</strong></h4>
                     <br>
-                    <span class="input-right" title="City" >
+                    <span class="input-right" title="City">
                         <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value)"> 
-                            <option>City</option>
+                            <option>Select City</option>
                             <?php
                                 $cityname = new loadData();
                                 $city = $cityname->get_city_data();
