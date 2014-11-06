@@ -108,24 +108,40 @@ class Controller_Admin extends Controller {
 
     public function action_sell($subname = null) {
         if ($subname == null) {
-            $propety_type = new Model_CommonFunction();
-            $propertydata = $propety_type->get_data(array('table' => 'property_type'), array('propertype_id', 'property_id','propertype_name'));
-            $citydata = $propety_type->get_data(array('table' => 'property_type'), array('propertype_id', 'property_id','propertype_name'));
-            
-            $view = View::forge('admin/layout/dashboard');
-            $view->menu = View::forge('admin/layout/menu');
-
-            $view->container = View::forge('admin/sellproperty/sellproperty');
-            $form = View::forge('admin/sellproperty/propertymaster');
-            $form->propertytype = $propertydata;
-
-            $view->container->propertymaster = $form;
-            $aminities = View::forge('admin/sellproperty/amenities');
-            $view->container->aminities = $aminities;
-            $propertyfeature = View::forge('admin/sellproperty/propertyfeature');
-            $view->container->propertyfeature = $propertyfeature;
-            return $view;
-        } else {
+//            if (Inpu::method() == 'post') {
+//                $obj = new Model_CommonFunction();
+//                $inarray = array('asdasd'=>Input::post('asdsadf'),
+//                                    );
+//                $is_id = $obj->insertData('sdf',$inarray);
+//            } else {
+                $obj = new Model_CommonFunction();
+                $propertydata = $obj->get_data(array('table' => 'property_type'), array('propertype_id', 'property_id', 'propertype_name'));
+                $subpropertydata = $obj->get_data(array('table' => 'property_sub_type'), array('property_subtype_id', 'propertype_id', 'property_name'));
+                $unitdata = $obj->get_data(array('table' => 'unit'), array('unit' => 'unit_id', 'unit_name' => 'unit_name'));
+                $citydata= $obj->get_data(array('table' => 'city'),array('city_id'=>'city_id','city_name'=>'city_name'));
+                $cityareadata= $obj->get_data(array('table'=>'city_area'),array('city_id'=>'city_area_id','locality_name'=>'locality_name'));
+                $numberdata=$obj->get_data(array('table'=>'number'),array('number_id'=>'number_id','number_name'=>'number'));
+                $view = View::forge('admin/layout/dashboard');
+                $view->menu = View::forge('admin/layout/menu');
+                
+               
+                $view->container = View::forge('admin/sellproperty/sellproperty');
+                $form = View::forge('admin/sellproperty/propertymaster');
+                $form->propertytype = $propertydata;
+                $form->property_sub_type = $subpropertydata;
+                $form->unit = $unitdata;
+                $form->citydata=$citydata;
+                $form->cityarea = $cityareadata;
+                $form->number=$numberdata;
+                $view->container->propertymaster = $form;
+                $aminities = View::forge('admin/sellproperty/amenities');
+                $view->container->aminities = $aminities;
+                $propertyfeature = View::forge('admin/sellproperty/propertyfeature');
+                $view->container->propertyfeature = $propertyfeature;
+                return $view;
+            }
+//        } else 
+            {
             echo 'no ull' . $subname;
         }
     }
