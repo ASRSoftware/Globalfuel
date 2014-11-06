@@ -89,32 +89,31 @@
 
             <select name="location"   class="form-control" required>
                 <option value="">No of Bathroom</option>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+                 <?php for ($i=1;$i<=10;$i++) { ?>
+            <option value="><?php echo $i ?>"><?php echo $i ?></option>
+                 <?php } ?> 
+               
+                
             </select>
         </div>
         <div class="form-group">
-            <label>Flat Loading</label><br/>
+            <label>Flat Loading % </label><br/>
 
             <select name="location"  class="form-control" required>
                 <option value="">Loading % ?</option>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+                <?php for ($i=10;$i<=50;$i++) { ?>
+            <option value="><?php echo $i ?>"><?php echo $i ?></option>
+                 <?php } ?> 
             </select>
         </div>
         <div class="form-group">
-            <label>Available Floor </label>
+             <label>Available Floor </label>
+             <select name="avilablefloor"  class="form-control" required>
+           <option value="">Available Floor</option>
 
-            <select name="available"   class="form-control" required>
-                <option value="">Floor No</option>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+              <?php for ($i=1;$i<=60;$i++) { ?>
+            <option value="><?php echo $i ?>"><?php echo $i ?></option>
+                 <?php } ?> 
             </select>
         </div>
 
@@ -126,12 +125,11 @@
         <div class="form-group">
             <label>No of Balconies</label>
 
-            <select name="location"  class="form-control" required>
-                <option value="">No of Balconies</option>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+            <select name="balconies"  class="form-control" required>
+                 <option value="">No of Balconies</option>
+                <?php for ($i=1;$i<=10;$i++) { ?>
+            <option value="><?php echo $i ?>"><?php echo $i ?></option>
+                 <?php } ?> 
             </select>
         </div>
         <div class="form-group">
@@ -150,10 +148,9 @@
 
             <select name="totalfloor" class="form-control"   required>
                 <option value="">Total Floor</option>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+                 <?php for ($i=1;$i<=70;$i++) { ?>
+            <option value="><?php echo $i ?>"><?php echo $i ?></option>
+                 <?php } ?> 
             </select>
         </div>
     </div>
@@ -207,14 +204,19 @@
     <div class="col-md-6">
 
         <div class="form-group">
-            <label>Select Unit</label><br/>
+            <label>Select Unit*</label><br/>
 
             <select name="location"  class="form-control" required>
-                <option value="">Select Unit</option>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+                <option value="">Select Unit*</option>
+                <option value="Sq-ft">Sq-ft</option>
+                <option value="Sq-yrd">Sq-yrd</option>
+                <option value="Sq-m">Sq-m</option>
+                <option value="Acre">Acre</option>
+                <option value="Bigha">Bigha</option>
+                <option value="Hectare">Hectare</option>
+                <option value="Marla">Marla</option>
+                <option value="Kanal">Kanal</option>
+                <option value="Biswa">Biswa1</option>
             </select>
         </div>
     </div>

@@ -84,7 +84,7 @@
 
 
     <div class="row">
-    <label><b>Possession Date</b></label>
+        <label >Possession Date</label><br/>
 </div>
     <div class="row">
         <div class="col-md-4">
@@ -100,7 +100,7 @@
         </div>
         <div class="col-md-4">
             <label>Month</label>
-                <label>Date</label>
+            
              
             <select name="month" class="form-control" required>
                 <option value="">Select Month</option>
