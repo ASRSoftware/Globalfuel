@@ -81,14 +81,10 @@
         <label>Project Type</label>
         <select name="" id="propertytype" class="form-control">
             <?php foreach ($propertytype as $key => $value) { ?>
-                <option value="<?php echo $value['property_id'] ?>"><?php echo $value['propertype_name'] ?></option>
+                <option value="<?php echo $value['propertype_id'] ?>"><?php echo $value['propertype_name'] ?></option>
             <?php } ?>
         </select>
     </div>
-
-
-
-
 </div>
     </div>
 
