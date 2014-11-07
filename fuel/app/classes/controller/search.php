@@ -28,14 +28,15 @@ class Controller_Search extends Controller {
       
         
         
-        $view = View::Forge('layout/index');
-        $view->header = View::Forge('layout/header');
+//        $view = View::Forge('layout/index');
+//       $view->header = 
+//        $view->header = View::Forge('layout/header');
         $sidebar = View::forge('layout/component/sidebar');
         $sidebar->size = 'max';
         $view->sidebar = $sidebar;
-        $view->recent_listing = View::forge('layout/component/recent_listing');
-        $view->best_offer = View::forge('layout/component/best_offer');
-        $view->footer = View::Forge('layout/footer');
-        return $view;
+//        $view->recent_listing = View::forge('layout/component/recent_listing');
+//        $view->best_offer = View::forge('layout/component/best_offer');
+//        $view->footer = View::Forge('layout/footer');
+        return View::Forge('layout/search');
     }
 }

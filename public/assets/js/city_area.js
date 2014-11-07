@@ -3,10 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-function print()
-{
-    alert('PRINT');
-}
+
 function loadCityArea(id){
     
     $('#location')[0].options.length = 0;
