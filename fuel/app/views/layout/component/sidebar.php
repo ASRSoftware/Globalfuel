@@ -13,9 +13,6 @@
                     <span class="input-right" title="City">
                         <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value)"> 
                             <option>Select City</option>
-
-                    
-
                             <?php
                                 $cityname = new loadData();
                                 $city = $cityname->get_city_data();
