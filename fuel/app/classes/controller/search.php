@@ -15,28 +15,14 @@ class Controller_Search extends Controller {
      * @return  Response
      */
     public function action_index() {
-        $minprice = $_POST['amount-min'];
-        $maxprice = $_POST['amount-max'];
-        $bedroom = $_POST['bedrooms'];
-        $buyrent = $_POST['buyrent'];
-        $city = $_POST['city'];
-        $location = $_POST['location'];
-        $area = $_POST['area'];
-        
-        
-        $search =  new Model_CommonFunction();
-      
-        
-        
-//        $view = View::Forge('layout/index');
-//       $view->header = 
-//        $view->header = View::Forge('layout/header');
+            
+       $view = View::Forge('layout/search');
+        $view->header = View::Forge('layout/header');
         $sidebar = View::forge('layout/component/sidebar');
-        $sidebar->size = 'max';
+        $sidebar->size = 'small';
         $view->sidebar = $sidebar;
-//        $view->recent_listing = View::forge('layout/component/recent_listing');
-//        $view->best_offer = View::forge('layout/component/best_offer');
-//        $view->footer = View::Forge('layout/footer');
-        return View::Forge('layout/search');
+        $view->footer = View::Forge('layout/footer');
+        return $view;
+        
     }
 }
