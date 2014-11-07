@@ -4,15 +4,9 @@
     <div class="col-md-4">
         <select name="" id="" class="form-control" required>
             <option value="">Bedroom</option>
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-            <option value="">5</option>
-            <option value="">6</option>
-            <option value="">7</option>
-            <option value="">8</option>
-            <option value="">more</option>
+            <?php foreach($number as $key=>$value){
+                echo '<option value="'.$value['number_id'].'">'.$value['number'].'</option>';
+            }?>
         </select>
     </div>
 </div><br />
@@ -21,15 +15,9 @@
     <div class="col-md-4">
         <select name="" id="" class="form-control" required>
             <option value="">Bathroom</option>
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-            <option value="">5</option>
-            <option value="">6</option>
-            <option value="">7</option>
-            <option value="">8</option>
-            <option value="">more</option>
+            <?php foreach($number as $key=>$value){
+                echo '<option value="'.$value['number_id'].'">'.$value['number'].'</option>';
+            }?>
         </select>
     </div>
 </div><br />
@@ -38,22 +26,16 @@
     <div class="col-md-4">
         <select name="" id="" class="form-control">
             <option value="">Balconies</option>
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-            <option value="">5</option>
-            <option value="">6</option>
-            <option value="">7</option>
-            <option value="">8</option>
-            <option value="">more</option>
+            <?php foreach($number as $key=>$value){
+                echo '<option value="'.$value['number_id'].'">'.$value['number'].'</option>';
+            }?>
         </select>
     </div>
 </div><br />
 <div class="row">
     <div class="col-md-4"><label> Is property furnished*:</label></div>
     <div class="col-md-4">
-        <select name="" id="" class="form-control" required>
+        <select name="furnishedstatus" id="" class="form-control" required>
             <option value=""> Furnished Status</option>
             <option value="">Furnished</option>
             <option value="">Semi Furnished</option>
@@ -67,10 +49,9 @@
     <div class="col-md-4">
         <select name="" id="" class="form-control" required>
             <option value="">Select Floor No.</option>
-            <option value=""> 1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">more</option>
+            <?php foreach($number as $key=>$value){
+                echo '<option value="'.$value['number_id'].'">'.$value['number'].'</option>';
+            }?>
 
         </select>
     </div>
@@ -80,10 +61,9 @@
     <div class="col-md-4">
         <select name="" id="" class="form-control" required>
             <option value="">Select Floor No.</option>
-            <option value=""> 1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">more</option>
+            <?php foreach($number as $key=>$value){
+                echo '<option value="'.$value['number_id'].'">'.$value['number'].'</option>';
+            }?>
 
         </select>
     </div>

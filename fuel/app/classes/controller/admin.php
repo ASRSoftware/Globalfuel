@@ -133,10 +133,12 @@ class Controller_Admin extends Controller {
             $form->cityarea = $cityareadata;
             $form->number = $numberdata;
             $view->container->propertymaster = $form;
+            
             $aminities = View::forge('admin/sellproperty/amenities');
             $view->container->aminities = $aminities;
             $propertyfeature = View::forge('admin/sellproperty/propertyfeature');
             $view->container->propertyfeature = $propertyfeature;
+            $view->container->propertyfeature->number = $numberdata;
             return $view;
             // }
         } else {
