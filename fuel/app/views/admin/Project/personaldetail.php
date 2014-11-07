@@ -2,6 +2,7 @@
     <head>
         <?php echo Fuel\Core\Asset::js('jquery.min.js') ?>
         <?php  echo Fuel\Core\Asset::js('city_area.js') ?>
+        <?php  echo Fuel\Core\Asset::js('propertyTypes.js') ?>
     </head> 
     <body>
 <div class="form-group">
@@ -29,7 +30,7 @@
 <div class="col-md-6">
     <div class="form-group">
         <label>Project City</label>
-        <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value)"> 
+        <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value)"  required> 
                             <option>Select City</option>
 
                     
@@ -73,14 +74,24 @@
     <div class="form-group">
 
         <label>Project Type</label>
-        <select name="" id="propertytype" class="form-control">
-            <?php foreach ($propertytype as $key => $value) { ?>
-                <option value="<?php echo $value['propertype_id'] ?>"><?php echo $value['propertype_name'] ?></option>
-            <?php } ?>
-        </select>
+        <select name="propertytype" id="propertytype" class="form-control" onchange="getPropertySubType(this.value);"></select>
+       <!-- <select name="" id="propertytype" class="form-control">
+            <?php // foreach ($propertytype as $key => $value) { ?>
+                <option value="<?php //echo $value['propertype_id'] ?>"><?php //echo $value['propertype_name'] ?></option>
+            <?php// } ?>
+        </select>-->
     </div>
+            
 </div>
     </div>
+  <div class="row">
+      <div class="col-md-12">
+        <label >Sub type Of Property</label>
+         <select name="propertysubtype" id="propertysubtype" class="form-control">
+            
+        </select>
+      </div>
+</div> <br/>  
 
 
 

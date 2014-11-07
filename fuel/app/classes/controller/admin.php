@@ -168,26 +168,23 @@ class Controller_Admin extends Controller {
             $propety_type = new Model_CommonFunction();
 
             $propertydata = $propety_type->get_data(array('table' => 'property_type'), array('propertype_id', 'property_id', 'propertype_name'));
-
-            $propertydata = $propety_type->get_data(array('table' => 'property_type'), array('propertype_id',  'propertype_name'));
-
+            $numberdata = $propety_type->get_data(array('table' => 'number'), array('number_id' => 'number_id', 'number_name' => 'number'));
             $citydata = $propety_type->get_data(array('table' => 'city'), array('city_id', 'city_name'));
-
+            $unitdata = $propety_type ->get_data(array('table' => 'unit'), array('unit' => 'unit_id', 'unit_name' => 'unit_name'));
 
             $view = View::forge('admin/Project/dashbordproject');
             $view->menu = View::forge('admin/layout/menu');
             $view->container = View::forge('admin/Project/master');
             $form = View::forge('admin/Project/personaldetail');
-           $form->propertytype = $propertydata;
-
-            //$form->cityname = $citydata;
-
+            $form->propertytype = $propertydata;
             $form->cityname = $citydata;
-
+          
             $view->container->form = $form;
             $aminities = View::forge('admin/Project/propertyamenities');
             $view->container->aminities = $aminities;
             $projectfeature = View::forge('admin/Project/projectfeature');
+            $projectfeature->unit = $unitdata;
+            $projectfeature->number = $numberdata;
             $view->container->projectfeature = $projectfeature;
 
             return $view;
