@@ -19,8 +19,8 @@ class Controller_Search extends Controller {
        $view = View::Forge('layout/search');
         $view->header = View::Forge('layout/header');
         $sidebar = View::forge('layout/component/sidebar');
-        $sidebar->size = 'small';
         $view->sidebar = $sidebar;
+         $sidebar->size = 'small';
         $view->footer = View::Forge('layout/footer');
         return $view;
         

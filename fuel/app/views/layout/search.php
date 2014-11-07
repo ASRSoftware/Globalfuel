@@ -1,18 +1,18 @@
 <?php echo $header ?>
 
-
-
 <div class="container">
 
 </div>
 <div class="container">
     <div class="row">
-        
+         
         <?php echo $sidebar ?>
+        
         <div class="col-md-8">
+           
             <div class="breadcrumbs">
                 <ol class="breadcrumb text-right">
-                    <li><a href="index-2.html">Home</a></li><li class="active">About Us</li>
+                    <BR>
                 </ol>
             </div>
             <section>
@@ -32,7 +32,7 @@
                 
                 <?php 
                 
-                for($i=0;$i<=10;$i++)
+                for($i=1;$i<=10;$i++)
                 {
 
                 
@@ -42,15 +42,16 @@
                             <div class="thumbnail boxed">
                                 <div class="listing-image">
                                     <span class="listing-tag important">New</span>
-                                    <img src="assets/images/demo-content/listing11.jpg" alt="Listing">
+                                    <img src="<?php echo Uri::base(false);?>assets/img/demo-content/listing<?php echo $i; ?>.jpg" alt="Listing">
                                     <div class="image-links">
                                         <div class="left">
-                                            <a class="inner" href="assets/images/demo-content/listing11.jpg" data-lightbox="related-5">
+                                            <!--<a class="inner" href="<?php echo Uri::base(false);?>assets/img/demo-content/listing<?php echo $i; ?>.jpg" data-lightbox="related-5">-->
+                                            <a class="inner" href="http://localhost/Globalfuel/public/assets/img/demo-content/listing2.jpg" data-lightbox="related-5">
                                                 <i class="fa fa-camera"></i>
                                             </a>
                                         </div>
                                         <div class="right">
-                                            <a class="inner" href="03-portfolio-detail.html">
+                                            <a class="inner" href="propertyDetail.php">
                                                 <i class="fa fa-link"></i>
                                             </a>
                                         </div>
@@ -104,8 +105,6 @@
         </div>
     </div>
 </div>
-
-
 <div class="container">
 
 </div>

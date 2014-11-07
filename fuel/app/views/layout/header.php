@@ -40,7 +40,9 @@
                     <div class="row">
                         <div class="col-md-4 text-center">
                             <!-- Brand and toggle get grouped for better mobile display -->
+                            
                             <div class="navbar-header">
+                                
                                 <button type="button" data-href="#" class="navbar-toggle toggle-sidebar pull-left" >
                                     <i class="icon-house"></i>
                                 </button>
@@ -53,16 +55,25 @@
                                 <a class="navbar-brand visible-sm visible-xs" href="#"><?php echo Asset::img('bricklogo-smal.png') ?></a>
                                 <a class="logo-small invisible hidden-xs hidden-sm" href="#"><?php echo Asset::img('bricklogo-smal.png') ?></a>
                             </div>
+                            
                             <p class="navbar-text scroll-move visible-md visible-lg">Contact Us: <strong>022-277-42-092</strong></p>
                             <div class="navbar-logo visible-md visible-lg">
                                 <div class="logo" data-bg="<?php echo Uri::base(false);?>assets/img/bricklogo.png" data-height="150"></div>
                             </div>
+                            
                         </div>
 
-
+                       
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                             
+                                
+                            
                             <ul class="nav navbar-nav navbar-right">
+                                <div style="font-size:14px;line-height:14px;text-align: right;">
+                                    <a href="#">Login</a>
+                                    <a href="#">Registration</a>
+                                </div>
                                 <li class="dropdown">
                                     <a href="<?php echo Uri::base(false);?>" class="dropdown-toggle" data-toggle="dropdown">Home </a>
                                     <!-- <ul class="dropdown-menu">

@@ -26,27 +26,6 @@ class Model_CommonFunction extends Model {
      * 
      * 
      * ********************************************** */
-
-    public function get_citydata($id) {
-        
-            $result = \DB::select('*')
-                    ->from('city_area')
-                    ->where('city_id', '=', $id)
-                    ->execute();
-        
-        return $result->as_array();
-    }
-    
-    public function get_cityarea($id) {
-        
-            $result = \DB::select('*')
-                    ->from('locality')
-                    ->where('city_area_id', '=', $id)
-                    ->execute();
-        
-        return $result->as_array();
-    }
-    
     
     public function get_data($table = array(), $select = array()) {
         if (!isset($table['value'])) {
@@ -71,7 +50,7 @@ class Model_CommonFunction extends Model {
 
      */
 
-    public function insertData($table, $data) {
+    public function insertData($table, $data = array()) {
         $result = \DB::insert($table)->set($data)->execute();
         return $result;
     }
@@ -130,24 +109,24 @@ class Model_CommonFunction extends Model {
         $result->execute()->as_array();
     }
 
-    public function get_city_data() {
-        $cityname = \DB::select('*')
-                ->from('city')
-                ->execute();
-        return $cityname->as_array();
-    }
-
-    public function get_city_area() {
-        $cityArea = \DB::select('*')
-                ->from('city_area')
-                ->execute();
-        return $cityArea->as_array();
-    }
-
-    public function get_city_locality() {
-        $locality = \DB::select('*')
-                ->from('locality')
-                ->execute();
-        return $locality->as_array();
-    }
+//    public function get_city_data() {
+//        $cityname = \DB::select('*')
+//                ->from('city')
+//                ->execute();
+//        return $cityname->as_array();
+//    }
+//
+//    public function get_city_area() {
+//        $cityArea = \DB::select('*')
+//                ->from('city_area')
+//                ->execute();
+//        return $cityArea->as_array();
+//    }
+//
+//    public function get_city_locality() {
+//        $locality = \DB::select('*')
+//                ->from('locality')
+//                ->execute();
+//        return $locality->as_array();
+//    }
 }
