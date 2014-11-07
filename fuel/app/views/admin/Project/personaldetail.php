@@ -1,4 +1,9 @@
- 
+<html>
+    <head>
+        <?php echo Fuel\Core\Asset::js('jquery.min.js') ?>
+        <?php  echo Fuel\Core\Asset::js('city_area.js') ?>
+    </head> 
+    <body>
 <div class="form-group">
     <label>Project Name</label>
     <input class="form-control" name="project_name" value="" placeholder="Project Name" required>
@@ -43,36 +48,25 @@
         <div class="col-md-6">
 
     <div class="form-group">
-        <label>City Area</label>
-
-        <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value)"> 
-                            <option>Select City</option>
-
-                    
-
-                            <?php
-                                $cityname = new loadData();
-                                $city = $cityname->get_city_data();
-                                foreach ($city as $value) {
-                                    echo '<option value=' . $value['city_id'] . '>' . $value['city_name'] . '</option>';
-                                }
-                            ?> 
+        
+         
+        <label>Select Location</label>
+                        <select class="form-control" name="location" id="location" data-placeholder="Location" onchange="loadlocality(this.value)">
+                            <option>Location</option>
                         </select>
+                   
     </div>
 </div>
     </div>
     <div class="row">
 <div class="col-md-6">
     <div class="form-group">
-        <label>Project Location</label>
+        <label>Project Area</label>
 
-        <select name="location" class="form-control" required>
-            <option value="">Select location</option>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-        </select>
+         <select class="form-control" id="area" name="area" data-placeholder="area">
+                            <option>Area</option>
+
+                        </select>
     </div>
 </div>
         <div class="col-md-6">
@@ -165,6 +159,8 @@
     <span id="validation" style="color: red"></span>
 </div>
 </div><br/>
+    </body>
+</html>
 
 <!--  <button type="submit" class="btn btn-default">Save</button>-->
 
