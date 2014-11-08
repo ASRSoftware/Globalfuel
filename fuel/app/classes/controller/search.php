@@ -17,7 +17,9 @@ class Controller_Search extends Controller {
     public function action_index() {
             
        $view = View::Forge('layout/search');
-        $view->header = View::Forge('layout/header');
+       $header = View::Forge('layout/header');
+        $header->registration = View::Forge('layout/registration');
+        $view->header = $header; 
         $sidebar = View::forge('layout/component/sidebar');
         $view->sidebar = $sidebar;
          $sidebar->size = 'small';

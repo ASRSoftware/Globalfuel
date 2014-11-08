@@ -32,8 +32,7 @@ class Controller_Welcome extends Controller {
         $view = View::Forge('layout/index');
         $header = View::Forge('layout/header');
         $header->registration = View::Forge('layout/registration');
-        //$view->header = View::Forge('layout/header');
-        $view->header = $header;
+        $view->header = $header;    
         $sidebar = View::forge('layout/component/sidebar');
         $sidebar->size = 'max';
         $view->sidebar = $sidebar;
@@ -43,6 +42,27 @@ class Controller_Welcome extends Controller {
         return $view;
     }
 
+    
+    
+    public function action_registration() {
+        
+        $result =  new Model_CommonFunction();
+        $data = array();
+        $result->insertData('user',$data);
+        
+        $view = View::Forge('layout/index');
+        $header = View::Forge('layout/header');
+        $header->registration = View::Forge('layout/registration');
+        $view->header = $header;    
+        $sidebar = View::forge('layout/component/sidebar');
+        $sidebar->size = 'max';
+        $view->sidebar = $sidebar;
+        $view->recent_listing = View::forge('layout/component/recent_listing');
+        $view->best_offer = View::forge('layout/component/best_offer');
+        $view->footer = View::Forge('layout/footer');
+        return $view;
+    }
+    
     /**
      * A typical "Hello, Bob!" type example.  This uses a Presenter to
      * show how to use them.
@@ -53,7 +73,9 @@ class Controller_Welcome extends Controller {
 
     public function action_about() {
         $view = View::Forge('layout/aboutus');
-        $view->header = View::Forge('layout/header');
+        $header = View::Forge('layout/header');
+        $header->registration = View::Forge('layout/registration');
+        $view->header = $header; 
         $sidebar = View::forge('layout/component/sidebar');
         $sidebar->size = 'small';
         $view->sidebar = $sidebar;
@@ -63,7 +85,9 @@ class Controller_Welcome extends Controller {
 
     public function action_contact() {
         $view = View::Forge('layout/contactus');
-        $view->header = View::Forge('layout/header');
+        $header = View::Forge('layout/header');
+        $header->registration = View::Forge('layout/registration');
+        $view->header = $header; 
         $view->sidebar = View::Forge('layout/component/sidebar-left');
         $view->footer = View::Forge('layout/footer');
         return $view;
@@ -71,7 +95,9 @@ class Controller_Welcome extends Controller {
 
     public function action_sellrentproperty() {
         $view = View::Forge('layout/property');
-        $view->header = View::Forge('layout/header');
+        $header = View::Forge('layout/header');
+        $header->registration = View::Forge('layout/registration');
+        $view->header = $header; 
         $view->sidebar = View::Forge('layout/component/sidebar-left');
         $view->postproperty = View::Forge('layout/component/postproperty');
         $view->footer = View::Forge('layout/footer');
@@ -80,7 +106,9 @@ class Controller_Welcome extends Controller {
     
     public function action_bunglow() {
         $view = View::Forge('layout/bunglow');
-        $view->header = View::Forge('layout/header');
+        $header = View::Forge('layout/header');
+        $header->registration = View::Forge('layout/registration');
+        $view->header = $header; 
         $view->sidebar = View::Forge('layout/component/sidebar-left');
         $view->project_listing = View::Forge('layout/project_listing');
         $view->footer = View::Forge('layout/footer');
@@ -89,7 +117,9 @@ class Controller_Welcome extends Controller {
     
     public function action_newproject() {
         $view = View::Forge('layout/property');
-        $view->header = View::Forge('layout/header');
+        $header = View::Forge('layout/header');
+        $header->registration = View::Forge('layout/registration');
+        $view->header = $header; 
         $view->sidebar = View::Forge('layout/component/sidebar-left');
         $view->project_listing = View::Forge('layout/project');
         $view->footer = View::Forge('layout/footer');
@@ -97,7 +127,9 @@ class Controller_Welcome extends Controller {
     }
     public function action_login() {
         $view = View::Forge('layout/login');
-        $view->header = View::Forge('layout/header');
+        $header = View::Forge('layout/header');
+        $header->registration = View::Forge('layout/registration');
+        $view->header = $header; 
        // $view->sidebar = View::Forge('layout/component/sidebar-left');
        // $view->project_listing = View::Forge('layout/project');
         $view->footer = View::Forge('layout/footer');
