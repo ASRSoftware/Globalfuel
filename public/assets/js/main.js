@@ -17,6 +17,16 @@ function parseBoolean(str, $defaultValue) {
 }
 
 
+$(document).on('click', '.user-register', function(e){
+    $('.login-registration-panel').fadeIn();
+    e.preventDefault();
+});
+
+$(document).on('click', '.login-registration-panel-close', function(){
+    $(this).parents('.login-registration-panel').hide();
+});
+
+
 
 /* -------------------------------------------------------------------------
  FIX layout when NO PARALAX HEADER
@@ -27,9 +37,6 @@ if($('.parallax.parallax-header').length === 0 && $('.flexslider').length === 0)
         'margin-top': '300px'
     });
 }
-
-
-
 
 /* -------------------------------------------------------------------------
  FORM ELEMENTS
