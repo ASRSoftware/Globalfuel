@@ -51,6 +51,24 @@
               </div>
               <div class="login-form">
                 <p>login form here</p>
+                 <div class="form-group">
+                <form role="form" action="" method="post" class=""
+                data-email-subject="" data-show-errors="true">
+
+                  <div class="form-group">
+                    <input required type="text" name="username" class="form-control"
+                    placeholder="Name *">
+                </div>
+               
+                <div class="form-group">
+                    <input required type="password" name="password" class="form-control"
+                    placeholder="Password">
+                </div>
+               
+                <button type="submit" class="btn btn-brick btn-xs large-padding  pull-right">Login</button>
+
+                </form>
+              </div>
               </div>
             </div>
         </div>

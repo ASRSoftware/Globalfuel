@@ -71,9 +71,10 @@
                             
                             <ul class="nav navbar-nav navbar-right">
                                 <div style="font-size:14px;line-height:14px;text-align: right;">
-                                    <a href="#" class="user-login">Login</a>
+                                    <a href="" class="user-login">Login</a>
                                     <a href="" class="user-register">Registration</a>
                                     <?php echo $registration; ?>
+                                    
                                 </div>
                                 <li class="dropdown">
                                     <a href="<?php echo Uri::base(false);?>" class="dropdown-toggle" data-toggle="dropdown">Home </a>
