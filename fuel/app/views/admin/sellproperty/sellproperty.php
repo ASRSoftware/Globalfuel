@@ -19,11 +19,10 @@
     </head>
     <body>
         <div class="container">
-            <form role="form">
+                <form class="sell-property-form" role="form" method="POST" action=""> 
                 <div class="row">
                     <div class="col-md-6">
                         <legend>Property Info</legend>
-                        <form role="form">
                             <?php echo $propertymaster ?>
                           
                             

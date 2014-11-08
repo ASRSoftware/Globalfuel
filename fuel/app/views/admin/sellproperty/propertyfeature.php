@@ -37,9 +37,9 @@
     <div class="col-md-4">
         <select name="furnishedstatus" id="" class="form-control" required>
             <option value=""> Furnished Status</option>
-            <option value="">Furnished</option>
-            <option value="">Semi Furnished</option>
-            <option value="">Unfurnished</option>
+            <option value="1">Furnished</option>
+            <option value="2">Semi Furnished</option>
+            <option value="3">Unfurnished</option>
 
         </select>
     </div>

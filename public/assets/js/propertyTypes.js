@@ -7,7 +7,7 @@
 
 $(document).ready(function(){
 $('#propertytype')[0].options.length = 0;
- $('#propertytype').append('<option>Type Of Property</option>');
+ $('#propertytype').append('<option value="">Type Of Property</option>');
   $.ajax({
      type: "GET",
      url: "http://localhost/Globalfuel/public/admin/propertyType/",
@@ -24,7 +24,7 @@ $('#propertytype')[0].options.length = 0;
 function getPropertySubType(id)
 {
     $('#propertysubtype')[0].options.length = 0;
-    $('#propertysubtype').append('<option>Type Of Property</option>');
+    $('#propertysubtype').append('<option value="">Type Of Property</option>');
     $.ajax({
      type: "GET",
      url: "http://localhost/Globalfuel/public/admin/propertySubType/"+id,
