@@ -109,12 +109,12 @@ class Controller_Admin extends Controller {
     public function action_sell($subname = null) {
         if ($subname == null) {
 
-//            if (Inpu::method() == 'post') {
-//                $obj = new Model_CommonFunction();
-//                $inarray = array('asdasd'=>Input::post('asdsadf'),
-//                                    );
-//                $is_id = $obj->insertData('sdf',$inarray);
-//            } else {
+            if (Input::method() == 'post') {
+                $obj = new Model_CommonFunction();
+                $inarray = array('user_id'=>'1','city_id'=>'1','city_area'=>'1','propertype_id'=>'1','sub_propertytype'=>'1');
+                $is_id = $obj->insertData('property',$inarray);
+                echo $is_id;
+            } else {
             $obj = new Model_CommonFunction();
             $propertydata = $obj->get_data(array('table' => 'property_type'), array('propertype_id', 'propertype_name'));
             $subpropertydata = $obj->get_data(array('table' => 'property_sub_type'), array('property_subtype_id', 'propertype_id', 'property_name'));
@@ -140,7 +140,7 @@ class Controller_Admin extends Controller {
             $view->container->propertyfeature = $propertyfeature;
             $view->container->propertyfeature->number = $numberdata;
             return $view;
-            // }
+             }
         } else {
 
             echo 'no ull' . $subname;

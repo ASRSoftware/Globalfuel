@@ -200,7 +200,7 @@ foreach ($number as $key => $value) {
         <br /><br /><br />
         <div class="row">
             <div class="col-md-2 col-md-offset-3"> <label for="inptprice">Or</label></col-md-3></div>
-            <div class="col-md-5"><label for="inptprice"><input type="text" class="form-control rentprice"  name='price' placeholder="Enter price" value="0" /></label></div>
+            <div class="col-md-5"><label for="inptprice"><input type="text" class="form-control rentprice"  name='price' placeholder="Enter price" required="" /></label></div>
         </div>
 
     </div>

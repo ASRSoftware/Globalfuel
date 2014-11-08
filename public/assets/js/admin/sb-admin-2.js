@@ -55,8 +55,14 @@ $(document).ready(function () {
         var crore = parseInt($('#crore').val())*10000000;
         var lac = parseInt($('#lac').val())*100000;
         var thousand = parseInt($('#thousand').val())*1000;
-        
-        $('#price').val((crore)+(lac)+thousand);
+         
+         if((crore + lac+ thousand)===0){
+             var c='';
+         }
+         else{
+            var c = (crore + lac+ thousand);
+         }
+        $('#price').val(c);
     }
 
 });
@@ -83,6 +89,9 @@ $(document).ready(function () {
          $('.rentprice').val(c);
      }
      
+     $(document).on('click', '.sell-property-for button', function(){
+        $('.sell-property-for').submit(); 
+     });
  });
 
 

@@ -208,24 +208,42 @@ CREATE TABLE IF NOT EXISTS `project_details` (
 -- Data exporting was unselected.
 
 
+-- Dumping structure for table globalrealestate.project_society
+CREATE TABLE IF NOT EXISTS `project_society` (
+  `project_society_id` int(11) NOT NULL AUTO_INCREMENT,
+  `sub_locality_id` int(11) NOT NULL DEFAULT '0',
+  `Project_society_name` varchar(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`project_society_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Data exporting was unselected.
+
+
 -- Dumping structure for table globalrealestate.property
 CREATE TABLE IF NOT EXISTS `property` (
   `property_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(50) NOT NULL,
-  `property_mode` varchar(10) NOT NULL,
+  `property_mode_id` int(11) NOT NULL,
   `city_id` int(11) NOT NULL,
   `city_area` int(11) NOT NULL,
+  `project_society_id` int(11) NOT NULL,
+  `transaction_type` char(50) NOT NULL,
+  `possession_status` char(50) NOT NULL,
+  `furnished_status` char(50) NOT NULL,
   `image` blob NOT NULL,
+  `description` varchar(500) NOT NULL,
   `propertype_id` int(11) NOT NULL,
   `sub_propertytype` int(11) NOT NULL,
   `covered_area` int(11) NOT NULL,
   `plot_area` int(11) NOT NULL,
-  `Column 11` int(11) NOT NULL,
+  `unit_id` int(11) NOT NULL,
+  `number_id` int(11) NOT NULL,
+  `amenities_id` int(11) NOT NULL,
   `price` int(30) NOT NULL,
   `locality` varchar(500) NOT NULL,
   `bed_rooms` int(50) NOT NULL,
   `bath_rooms` int(50) NOT NULL,
-  `area` varchar(200) NOT NULL,
+  `area` float NOT NULL,
   `brokerage` varchar(500) NOT NULL,
   `insertion_date` date NOT NULL,
   `modify_date` date NOT NULL,
@@ -235,11 +253,32 @@ CREATE TABLE IF NOT EXISTS `property` (
   KEY `cityProperty` (`city_id`),
   KEY `city_areaProperty` (`city_area`),
   KEY `sub_propertytype` (`sub_propertytype`),
+  KEY `amenities` (`amenities_id`),
+  KEY `property_mode` (`property_mode_id`),
+  KEY `unit_id` (`unit_id`),
+  KEY `number_id` (`number_id`),
+  KEY `project_society_id` (`project_society_id`),
   CONSTRAINT `PROPERTYTYPE_FK` FOREIGN KEY (`propertype_id`) REFERENCES `property_type` (`propertype_id`),
   CONSTRAINT `USER` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`),
+  CONSTRAINT `amenities` FOREIGN KEY (`amenities_id`) REFERENCES `amenities` (`amenities_id`),
   CONSTRAINT `cityProperty` FOREIGN KEY (`city_id`) REFERENCES `city` (`city_id`),
   CONSTRAINT `city_areaProperty` FOREIGN KEY (`city_area`) REFERENCES `city_area` (`city_area_id`),
-  CONSTRAINT `sub_propertytype` FOREIGN KEY (`sub_propertytype`) REFERENCES `property_sub_type` (`property_subtype_id`)
+  CONSTRAINT `number_id` FOREIGN KEY (`number_id`) REFERENCES `number` (`number_id`),
+  CONSTRAINT `project_society_id` FOREIGN KEY (`project_society_id`) REFERENCES `project_society` (`project_society_id`),
+  CONSTRAINT `property_mode` FOREIGN KEY (`property_mode_id`) REFERENCES `property_mode` (`property_mode_id`),
+  CONSTRAINT `sub_propertytype` FOREIGN KEY (`sub_propertytype`) REFERENCES `property_sub_type` (`property_subtype_id`),
+  CONSTRAINT `unit_id` FOREIGN KEY (`unit_id`) REFERENCES `unit` (`unit_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Data exporting was unselected.
+
+
+-- Dumping structure for table globalrealestate.property_mode
+CREATE TABLE IF NOT EXISTS `property_mode` (
+  `property_mode_id` int(11) NOT NULL AUTO_INCREMENT,
+  `sale` char(50) NOT NULL DEFAULT '0',
+  `rent` char(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`property_mode_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Data exporting was unselected.
