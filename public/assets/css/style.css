@@ -12999,19 +12999,31 @@ body .vco-slider .slider-item .content .content-container .media .media-wrapper 
   }
 }
 
-
-
 .login-registration-panel{
-	position:fixed;top:0px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
-	background: rgba(0,0,0,.3);
-	z-index: 3;
+  position:fixed;top:0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,.3);
+  z-index: 99999999999;
 }
+/*.login-registration-panel > *{
+}*/
 .login-registration-panel .login-registration-panel-inner{
-	background: white ;
-	padding: 20px;
-	border-radius: 4px;
+  position: relative;
+  background: white ;
+  margin-top: 30px;
+  padding: 40px 20px;
+  padding-top: 40px;
+  border-radius: 4px;
+}
+
+.login-registration-panel .login-registration-panel-close{
+  height: 40px;
+  width:40px;
+  background-image: url('../img/close.svg');
+  background-size:100%;
+  position: absolute;
+  top: 0px;right: 0px;
 
 }

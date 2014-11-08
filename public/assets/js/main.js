@@ -18,15 +18,35 @@ function parseBoolean(str, $defaultValue) {
 
 
 $(document).on('click', '.user-register', function(e){
-    $('.login-registration-panel').fadeIn();
+    user.show('register');
     e.preventDefault();
 });
 
-$(document).on('click', '.login-registration-panel-close', function(){
-    $(this).parents('.login-registration-panel').hide();
+$(document).on('click', '.user-login', function(e){
+    user.show('login');
+    e.preventDefault();
 });
 
+$(document).on('click', '.login-registration-panel-close', function(e){
+    user.hide();
+    e.preventDefault();
+});
 
+user = {
+    show: function(arg){
+        $('.login-registration-panel').fadeIn();
+        $('.login-registration-panel .register-form').hide();
+        $('.login-registration-panel .login-form').hide();
+        if(arg === 'login'){
+            $('.login-registration-panel .login-form').show();
+        }else{
+            $('.login-registration-panel .register-form').show();
+        }
+    },
+    hide: function(){
+       $('.login-registration-panel').fadeOut('fast');
+    }
+}
 
 /* -------------------------------------------------------------------------
  FIX layout when NO PARALAX HEADER
