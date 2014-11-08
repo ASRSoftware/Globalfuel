@@ -165,6 +165,7 @@ class Controller_Admin extends Controller {
 
     public function action_project($subname = null) {
         if ($subname == null) {
+           
             $propety_type = new Model_CommonFunction();
 
             $propertydata = $propety_type->get_data(array('table' => 'property_type'), array('propertype_id', 'property_id', 'propertype_name'));
@@ -192,6 +193,29 @@ class Controller_Admin extends Controller {
             echo 'no valid ' . $subname;
         }
         //return Response::forge(Presenter::forge('welcome/hello'));
+    }
+    public function action_insertcheck() {
+        if(Input::method()== 'POST'){
+        $dataid = new Model_CommonFunction();
+            // $dataid->add_data(array('name'=>Input::POST('name'),'dname'=>Input::POST('dname'),'email'=>Input::POST('email')));
+
+            $data = array('name' => Input::POST('project_name'), 'dname' => Input::POST('developer_name'), 'email' => Input::POST('email'));
+            $dataid->insertData('check', $data);
+           }
+ else {
+            echo 'enter the value';
+            }
+       
+            $view = View::forge('admin/layout/dashboard');
+            $view->menu = View::forge('admin/layout/menu');
+
+            $view->container = View::forge('admin/insertcheck/insert');
+            /*$view->container->createuser = View::forge('admin/user/createuserform');
+            $loginform = View::forge('admin/user/loginform');
+            $view->container->loginform = $loginform;*/
+
+            return $view;
+       
     }
 
     /**

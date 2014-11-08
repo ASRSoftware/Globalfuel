@@ -1,7 +1,7 @@
 <div class="panel-body">
 
     <div class="row">
-        <form role="form" >
+        <form role="form" id="insert" action="http://localhost/Globalfuel/public/admin/insertcheck/" method="post" >
             <div class="col-md-6">  
 
 

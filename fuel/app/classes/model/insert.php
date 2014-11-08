@@ -10,6 +10,12 @@ class Model_Insert extends Model{
     
     
     public function add_data(){
+         $result = \DB::insert('check')->set(array(
+                    'name' => $name['project_name'],
+                    'dname' => $dname['developer_name'],
+                    'email' => $email['email'],
+                ))->execute();
+        return $result;
         
     }
     

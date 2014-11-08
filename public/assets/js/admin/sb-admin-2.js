@@ -66,7 +66,7 @@ $(document).ready(function () {
 
 
 
-            var a, b=0, c=0, amount=0;
+         /*   var a, b=0, c=0, amount=0;
             var flag=0;
             $(document).ready(function () {
                 
@@ -96,7 +96,7 @@ $(document).ready(function () {
 
             });
 
-            });
+            });*/
             
             
            
