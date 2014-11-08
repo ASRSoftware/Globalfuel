@@ -6,10 +6,10 @@ $(function () {
 $('document').ready(function () {
     $('.rentandsaleselection input').click(
             function (arg) {
-                if($(this).val() === 'rent'){
+                if ($(this).val() === 'rent') {
                     $('#container-rent').show().find('input, select').removeAttr('disabled');
                     $('#container-sale').hide().find('input, select').attr('disabled', 'true');
-                }else{
+                } else {
                     $('#container-sale').show().find('input, select').removeAttr('disabled');
                     $('#container-rent').hide().find('input, select').attr('disabled', 'true');
                 }
@@ -39,3 +39,25 @@ $(function () {
         }
     })
 })
+
+
+
+var a, b, c, amount = 0;
+$(document).ready(function () {
+
+     $('#thousand, #lac, #crore').change(function () {
+        calculateTotal();
+
+    });
+    
+    
+    function calculateTotal(){
+        var crore = parseInt($('#crore').val())*10000000;
+        var lac = parseInt($('#lac').val())*100000;
+        var thousand = parseInt($('#thousand').val())*1000;
+        
+        $('#price').val((crore)+(lac)+thousand);
+    }
+
+});
+                        

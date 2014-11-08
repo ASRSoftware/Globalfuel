@@ -1,3 +1,10 @@
+<html>
+    <head>
+       <link rel="stylesheet" type="text/css" href="<?php echo Uri::base(false);?>checkboxcss/bootstrap-select.css">
+  <script type="text/javascript" src="<?php echo Uri::base(false);?>checlboxjs/bootstrap-select.js"></script>
+       <?php echo Fuel\Core\Asset::js('multiple select.js') ?>
+    </head>
+    <body>
 <div class="row">
     <label style="margin-left:  120px;">Flat Plan</label>
 </div>
@@ -87,11 +94,11 @@
         <div class="form-group">
             <label>No of Bathroom</label>
 
-            <select name="bathroom"   class="form-control" required>
+            <select name="bathroom"   class="form-control" class="selectpicker" multiple required>
                 <option value="">No of Bathroom</option>
                 <?php foreach ($number as $key => $value) { ?>
                     <option value="<?php echo $value['number_id'] ?>"><?php echo $value['number'] ?></option>
-            <?php }  ?>  
+                <?php } ?>  
 
 
             </select>
@@ -103,7 +110,7 @@
                 <option value="">Loading % ?</option>
                 <?php foreach ($number as $key => $value) { ?>
                     <option value="<?php echo $value['number_id'] ?>"><?php echo $value['number'] ?></option>
-            <?php }  ?> 
+                <?php } ?> 
             </select>
         </div>
         <div class="form-group">
@@ -111,9 +118,9 @@
             <select name="avilablefloor"  class="form-control" required>
                 <option value="">Available Floor</option>
 
-               <?php foreach ($number as $key => $value) { ?>
+                <?php foreach ($number as $key => $value) { ?>
                     <option value="<?php echo $value['number_id'] ?>"><?php echo $value['number'] ?></option>
-            <?php }  ?> 
+                <?php } ?> 
             </select>
         </div>
 
@@ -127,9 +134,9 @@
 
             <select name="balconies"  class="form-control" required>
                 <option value="">No of Balconies</option>
-               <?php foreach ($number as $key => $value) { ?>
+                <?php foreach ($number as $key => $value) { ?>
                     <option value="<?php echo $value['number_id'] ?>"><?php echo $value['number'] ?></option>
-            <?php }  ?>  
+                <?php } ?>  
             </select>
         </div>
         <div class="form-group">
@@ -145,132 +152,133 @@
         </div>
         <div class="form-group">
             <label>Total No Of the Floor</label>
-            <select name="totalfloor" class="form-control"   required>
+            <select name="totalfloor" class="form-control"  class="selectpicker"multiple required>
                 <option value="">Total Floor</option>
                 <?php foreach ($number as $key => $value) { ?>
                     <option value="<?php echo $value['number_id'] ?>"><?php echo $value['number'] ?></option>
-            <?php }  ?>     
+                <?php } ?>     
             </select>
-               
-            </div>
+
         </div>
     </div>
-    <div class="row">
-        <label style="margin-left:  120px;">Images</label>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label>Flat Images</label>
-                <input type="file" multiple name="flatimage" class="form-control" value="" required>
-                <span id="validation" style="color: red"></span>
-            </div>   
-            <div class="form-group">
-                <label>Images Of Floor Plan</label>
-                <input type="file" multiple name="AminitiesImages" class="form-control" value="" required>
-                <span id="validation" style="color: red"></span>
-            </div>  
-        </div>
-
-        <div class="col-md-6">
-            <div class="form-group">
-                <label>Images Of master plan</label>
-                <input type="file" multiple name="AminitiesImages" class="form-control" value="" required>
-                <span id="validation" style="color: red"></span>
-            </div> 
-            <div class="form-group">
-                <label>Other Images</label>
-                <input type="file" multiple name="AminitiesImages" class="form-control" value="" required>
-                <span id="validation" style="color: red"></span>
-            </div>  
-        </div>
-    </div>
-    <div class="row">
-        <label style="margin-left:  160px;">Area</label>
-
+</div>
+<div class="row">
+    <label style="margin-left:  120px;">Images</label>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Flat Images</label>
+            <input type="file" multiple name="flatimage" class="form-control" value="" required>
+            <span id="validation" style="color: red"></span>
+        </div>   
+        <div class="form-group">
+            <label>Images Of Floor Plan</label>
+            <input type="file" multiple name="AminitiesImages" class="form-control" value="" required>
+            <span id="validation" style="color: red"></span>
+        </div>  
     </div>
 
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Images Of master plan</label>
+            <input type="file" multiple name="AminitiesImages" class="form-control" value="" required>
+            <span id="validation" style="color: red"></span>
+        </div> 
+        <div class="form-group">
+            <label>Other Images</label>
+            <input type="file" multiple name="AminitiesImages" class="form-control" value="" required>
+            <span id="validation" style="color: red"></span>
+        </div>  
+    </div>
+</div>
+<div class="row">
+    <label style="margin-left:  160px;">Area</label>
 
-    <div class="row">
-        <div class="col-md-3"><label for="Property_area" >Total area:</label></div>
-        <div class="col-md-5"><input type="number" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Plot area" name="total_area" ></div>
-        <div class="col-md-4">
-            <select name="" id="" class="form-control" >
-                <?php foreach ($unit as $key => $value) { ?>
-                    <option value="<?php echo $value['unit_id'] ?>"><?php echo $value['unit_name'] ?></option>
-                <?php } ?>
-            </select>
-        </div>
-
-    </div><br />
+</div>
 
 
+<div class="row">
+    <div class="col-md-3"><label for="Property_area" >Total area:</label></div>
+    <div class="col-md-5"><input type="number" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Plot area" name="total_area" ></div>
+    <div class="col-md-4">
+        <select name="" id="" class="form-control" >
+            <?php foreach ($unit as $key => $value) { ?>
+                <option value="<?php echo $value['unit_id'] ?>"><?php echo $value['unit_name'] ?></option>
+            <?php } ?>
+        </select>
+    </div>
+
+</div><br />
 
 
-    <div class="row">
-        <div class="col-md-3"><label for="Property_area" >Plot area:</label></div>
-        <div class="col-md-5"><input type="number" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Plot area" name="plot_area" ></div>
-        <div class="col-md-4">
-            <select name="" id="" class="form-control" >
-                <?php foreach ($unit as $key => $value) { ?>
-                    <option value="<?php echo $value['unit_id'] ?>"><?php echo $value['unit_name'] ?></option>
-                <?php } ?>
-            </select>
-        </div>
 
-    </div><br />
-    <div class="row">
-        <div class="col-md-3"><label for="Property_area" >Carpet area:</label></div>
-        <div class="col-md-5"><input type="number" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Plot area" name="total_area" ></div>
-        <div class="col-md-4">
-            <select name="" id="" class="form-control" >
-                <?php foreach ($unit as $key => $value) { ?>
-                    <option value="<?php echo $value['unit_id'] ?>"><?php echo $value['unit_name'] ?></option>
-                <?php } ?>
+
+<div class="row">
+    <div class="col-md-3"><label for="Property_area" >Plot area:</label></div>
+    <div class="col-md-5"><input type="number" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Plot area" name="plot_area" ></div>
+    <div class="col-md-4">
+        <select name="" id="" class="form-control" >
+            <?php foreach ($unit as $key => $value) { ?>
+                <option value="<?php echo $value['unit_id'] ?>"><?php echo $value['unit_name'] ?></option>
+            <?php } ?>
         </select>
     </div>
 
 </div><br />
 <div class="row">
+    <div class="col-md-3"><label for="Property_area" >Carpet area:</label></div>
+    <div class="col-md-5"><input type="number" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Plot area" name="total_area" ></div>
+    <div class="col-md-4">
+        <select name="" id="" class="form-control" >
+            <?php foreach ($unit as $key => $value) { ?>
+                <option value="<?php echo $value['unit_id'] ?>"><?php echo $value['unit_name'] ?></option>
+            <?php } ?>
+        </select>
+    </div>
+
+</div><br />
+<!--<div class="row">
     <label style="margin-left:  140px;">Budget</label>
 
-</div>
+</div>-->
 <div class="row">
     <div class="col-md-12">
 
         <div class="row">
-            <div class="col-md-3">Expected Price*:</div>
+            <div class="col-md-3" ><b>Expected Price*:</b></div>
             <div class="col-md-3">
-                <select name="" id="" class="form-control" required>
-                    <option value="">Crore</option>
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                    <option value="">more</option>
+                 <label>Crore</label>
+                <select name="" id="crore" class="form-control" required>
+                    <option value="0">Crore</option>
+                    <?php foreach ($number as $key => $value) { ?>
+                        <option value="<?php echo $value['number_id'] ?>"><?php echo $value['number'] ?></option>
+                    <?php } ?>  
                 </select>
             </div>
             <div class="col-md-3">
-                <select name="" id="" class="form-control" required>
-                    <option value="">Lac</option>
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                    <option value="">more</option>
+                <label>Lac</label>
+                <select name="" id="lac" class="form-control" required>
+                    <option value="0">Lac</option>
+                    <?php foreach ($number as $key => $value) { ?>
+                        <option value="<?php echo $value['number_id'] ?>"><?php echo $value['number'] ?></option>
+                    <?php } ?>  
                 </select>
             </div>
             <div class="col-md-3">
-                <select name="" id="" class="form-control" required>
-                    <option value="">Thousands</option>
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
-                    <option value="">more</option>
+                <label>Thousands</label>
+                <select name="" id="thousand" class="form-control" required>
+                    <option value="0">Thousands</option>
+                    <?php foreach ($number as $key => $value) { ?>
+                        <option value="<?php echo $value['number_id'] ?>"><?php echo $value['number'] ?></option>
+                    <?php } ?>
                 </select>
-            </div>
+            </div <br />
             <br /><br /><br />
             <div class="row">
-                <div class="col-md-2 col-md-offset-3"> <label for="inptprice">Or</label></col-md-3></div>
-                <div class="col-md-5"><label for="inptprice"><input type="text" class="form-control" name='price' placeholder="Enter price" /></label></div>
+               
+                <br /><div class="col-md-2 col-md-offset-3"> <label for="inptprice">Or</label></col-md-3></div>
+                <div class="col-md-5"><label for="inptprice"><input type="text" class="form-control"id="price" name='price' placeholder="Enter price" /></label></div>
             </div><br/>
 
 
@@ -306,3 +314,5 @@
 <br/>
 <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 40px;">Save Your Post</button>
 
+</body>
+</html>
