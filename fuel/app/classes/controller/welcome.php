@@ -30,7 +30,10 @@ class Controller_Welcome extends Controller {
      */
     public function action_index() {
         $view = View::Forge('layout/index');
-        $view->header = View::Forge('layout/header');
+        $header = View::Forge('layout/header');
+        $header->registration = View::Forge('layout/registration');
+        //$view->header = View::Forge('layout/header');
+        $view->header = $header;
         $sidebar = View::forge('layout/component/sidebar');
         $sidebar->size = 'max';
         $view->sidebar = $sidebar;

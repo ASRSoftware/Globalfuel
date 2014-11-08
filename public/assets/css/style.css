@@ -12998,3 +12998,20 @@ body .vco-slider .slider-item .content .content-container .media .media-wrapper 
     min-height: 300px !important;
   }
 }
+
+
+
+.login-registration-panel{
+	position:fixed;top:0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background: rgba(0,0,0,.3);
+	z-index: 3;
+}
+.login-registration-panel .login-registration-panel-inner{
+	background: white ;
+	padding: 20px;
+	border-radius: 4px;
+
+}

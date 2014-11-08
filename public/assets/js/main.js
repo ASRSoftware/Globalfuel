@@ -16,6 +16,15 @@ function parseBoolean(str, $defaultValue) {
     //return /true/i.test(str);
 }
 
+$(document).on('click', '.user-register', function(e){
+    $('.login-registration-panel').fadeIn();
+    e.preventDefault();
+});
+
+$(document).on('click', '.login-registration-panel-close', function(){
+    $(this).parents('.login-registration-panel').hide();
+});
+
 /* -------------------------------------------------------------------------
  FORM ELEMENTS
  ------------------------------------------------------------------------- */
