@@ -153,48 +153,7 @@ foreach ($number as $key => $value) {
             <div class="col-md-2 col-md-offset-3"> <label for="inptprice">Or</label></col-md-3></div>
             <div class="col-md-5"><label for="inptprice"><input type="text" id="price" class="form-control" name='price' placeholder="Enter price" value="0"/></label></div>
         </div>
-        <script type="text/javascript">
-
-
-            var a, b, c, amount=0;
-            $(document).ready(function () {
-
-                $('#crore').change(function () {
-                    a = $('#crore :selected').val();
-
-                    amount=a*10000000;
-
-
-                    $('#price').val(amount);
-
-                });
-
-            });
-            $(document).ready(function () {
-                $('#lac').change(function () {
-                    //var val = $('#price').val();
-                    b = $('#lac :selected').val();
-                    amount+=b*100000;
-
-                    $('#price').val(amount);
-                });
-
-            });
-            $(document).ready(function () {
-                $('#thousand').change(function () {
-                    var val = $('#price').val();
-
-                    c = $('#thousand :selected').val();
-                    amount+=b*1000;
-                    $('#price').val(amount);
-
-                });
-
-
-
-            });
-
-        </script>
+        
 
 
     </div>
