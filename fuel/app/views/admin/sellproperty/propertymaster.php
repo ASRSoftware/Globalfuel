@@ -11,15 +11,15 @@
 <div class="row">
     <div class="col-md-4"><label for="propertytype">Type of Property*:</label></div>
     <div class="col-md-8">
-        <select name="propertytype" id="propertytype" class="form-control" onchange="getPropertySubType(this.value);">
-
+        <select name="propertytype" required="" id="propertytype" class="form-control" onchange="getPropertySubType(this.value);">
+            
         </select>
     </div>
 </div><br />
 <div class="row">
     <div class="col-md-4"><label for="propertytype">Property Sub type*:</label></div>
     <div class="col-md-8">
-        <select name="propertysubtype" id="propertysubtype" class="form-control">
+        <select name="propertysubtype" required="" id="propertysubtype" class="form-control">
 
         </select>
     </div>
@@ -68,8 +68,8 @@
 <div class="form-group">
     <label for="Property_area">City*:</label>
     <span class="input-right" title="City">
-        <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value);"> 
-            <option>Select City</option>
+        <select class="form-control" required="" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value);"> 
+            <option value="">Select City</option>
 <?php
 $cityname = new loadData();
 $city = $cityname->get_city_data();
@@ -81,9 +81,9 @@ foreach ($city as $value) {
     </span>
     <br>
     <span class=" input-right" title="Location">
-        <label for="Property_area">City*:</label>
-        <select class="form-control" name="location" id="location" data-placeholder="Location" onchange="loadlocality(this.value)">
-            <option>Location</option>
+        <label for="Property_area">City Area*:</label>
+        <select class="form-control" required="" name="location" id="location" data-placeholder="Location" onchange="loadlocality(this.value)">
+            <option value="">Location</option>
         </select>
     </span>
     <br>
@@ -120,7 +120,7 @@ foreach ($city as $value) {
         <div class="col-md-3">Expected Price*:</div>
         <div class="col-md-3">
             <select name="" id="crore" class="form-control" required>
-                <option value="">Crore</option>
+                <option value="0">Crore</option>
 <?php foreach ($number as $key => $value) { ?>
                     <option value="<?php echo $value['number_id'] ?>" ><?php echo $value['number'] ?></option>
                 <?php } ?>
@@ -128,7 +128,7 @@ foreach ($city as $value) {
         </div>
         <div class="col-md-3">
             <select name="" id="lac" class="form-control" required>
-                <option value="">Lac</option>
+                <option value="0">Lac</option>
 <?php
 foreach ($number as $key => $value) {
     echo '<option value="' . $value["number_id"] . '">' . $value["number"] . '</option>';
@@ -138,7 +138,7 @@ foreach ($number as $key => $value) {
         </div>
         <div class="col-md-3">
             <select name="" id="thousand" class="form-control" required>
-                <option value="">Thousands</option>
+                <option value="0">Thousands</option>
                 <?php
                 foreach ($number as $key => $value) {
                     echo '<option value="' . $value['number_id'] . '">' . $value['number'] . '</option>';
@@ -167,8 +167,8 @@ foreach ($number as $key => $value) {
     <div class="row">
         <div class="col-md-3">Expected Rent*:</div>
         <div class="col-md-3">
-            <select name="" id="" class="form-control" required>
-                <option value="">Lac</option>
+            <select name="lac"  class="form-control rentlacs" required>
+                <option value="0">Lac</option>
                 <?php
                 foreach ($number as $key => $value) {
                     echo '<option value="' . $value['number_id'] . '">' . $value['number'] . '</option>';
@@ -177,8 +177,8 @@ foreach ($number as $key => $value) {
             </select>
         </div>
         <div class="col-md-3">
-            <select name="" id="" class="form-control" required>
-                <option value="">Thousands</option>
+            <select name="thousand"  class="form-control rentthousands" required>
+                <option value="0">Thousands</option>
 
                 <?php
                 foreach ($number as $key => $value) {
@@ -188,8 +188,8 @@ foreach ($number as $key => $value) {
             </select>
         </div>
         <div class="col-md-3">
-            <select name="" id="" class="form-control" required>
-                <option value="">Hundred</option>
+            <select name="hundred"  class="form-control renthundred" required>
+                <option value="0">Hundred</option>
                 <?php
                 foreach ($number as $key => $value) {
                     echo '<option value="' . $value['number_id'] . '">' . $value['number'] . '</option>';
@@ -200,7 +200,7 @@ foreach ($number as $key => $value) {
         <br /><br /><br />
         <div class="row">
             <div class="col-md-2 col-md-offset-3"> <label for="inptprice">Or</label></col-md-3></div>
-            <div class="col-md-5"><label for="inptprice"><input type="text" class="form-control" name='price' placeholder="Enter price" /></label></div>
+            <div class="col-md-5"><label for="inptprice"><input type="text" class="form-control rentprice"  name='price' placeholder="Enter price" value="0" /></label></div>
         </div>
 
     </div>

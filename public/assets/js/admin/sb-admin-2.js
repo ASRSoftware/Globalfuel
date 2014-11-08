@@ -42,7 +42,7 @@ $(function () {
 
 
 
-var a, b, c, amount = 0;
+
 $(document).ready(function () {
 
      $('#thousand, #lac, #crore').change(function () {
@@ -64,39 +64,29 @@ $(document).ready(function () {
 
 //sale property amount calculation done here.
 
+ $(document).ready(function(){
+     $('.rentlacs,.rentthousands,.renthundred').change(function(){
+     });
+     $(document).on('change', '.rentlacs,.rentthousands,.renthundred', function(){
+         
+      rentTotal();
+     })
+     function rentTotal(){
+       var  a= parseInt($('.rentlacs').val())*100000;
+        var b= parseInt($('.rentthousands').val())*1000;
+        var c= parseInt($('.renthundred').val())*100;
+        if( (a+b+c) === 0 ){
+            var c = '';
+        }else{
+            var c = a+b+c;
+        }
+         $('.rentprice').val(c);
+     }
+     
+ });
 
 
-            var a, b=0, c=0, amount=0;
-            var flag=0;
-            $(document).ready(function () {
-                
-                $('#crore').change(function () {
-                    a = $('#crore :selected').val();
-
-                    amount=a*10000000;
-                    amount+=b*100000;
-                    amount+=c*1000;
-                    $('#price').val(amount);
-
-                });
-                 $('#lac').change(function () {
-                    //var val = $('#price').val();
-                    b = $('#lac :selected').val();
-                     amount+=b*100000;
-                    $('#price').val(amount);
-                });
-                $('#thousand').change(function () {
-                    //var val = $('#price').val();
-
-                    c = $('#thousand :selected').val();
-                   
-                     
-                     amount+=c*1000;
-                    $('#price').val(amount); 
-
-            });
-
-            });
+            
             
             
            
