@@ -47,13 +47,6 @@ class Controller_Welcome extends Controller {
      * @access  public
      * @return  Response
      */
-    public function action_hello() {
-
-        $var = new Model_Insert();
-        $var->add_data();
-        echo 'this is hello';
-        //return Response::forge(Presenter::forge('welcome/hello'));
-    }
 
     public function action_about() {
         $view = View::Forge('layout/aboutus');
@@ -109,15 +102,15 @@ class Controller_Welcome extends Controller {
     }
     public function action_getcity($id = null){
      
-     $result =  new Model_CommonFunction();
-       
-        return json_encode($result->get_citydata($id)); 
+        $result =  new Model_CommonFunction();
+        $propertydata = $result->get_data(array('table' =>'city_area','where'=>'city_id','value'=>$id), array('city_area_id', 'locality_name'));     
+        return json_encode($propertydata);
     }
     public function action_getcityarea($id = null){
      
      $result =  new Model_CommonFunction();
-       
-        return json_encode($result->get_cityarea($id)); 
+        $propertydata = $result->get_data(array('table' =>'locality','where'=>'city_area_id','value'=>$id), array('locality_id', 'name'));     
+        return json_encode($propertydata);
     }
 
     /**

@@ -61,3 +61,45 @@ $(document).ready(function () {
 
 });
                         
+
+//sale property amount calculation done here.
+
+
+
+            var a, b=0, c=0, amount=0;
+            var flag=0;
+            $(document).ready(function () {
+                
+                $('#crore').change(function () {
+                    a = $('#crore :selected').val();
+
+                    amount=a*10000000;
+                    amount+=b*100000;
+                    amount+=c*1000;
+                    $('#price').val(amount);
+
+                });
+                 $('#lac').change(function () {
+                    //var val = $('#price').val();
+                    b = $('#lac :selected').val();
+                     amount+=b*100000;
+                    $('#price').val(amount);
+                });
+                $('#thousand').change(function () {
+                    //var val = $('#price').val();
+
+                    c = $('#thousand :selected').val();
+                   
+                     
+                     amount+=c*1000;
+                    $('#price').val(amount); 
+
+            });
+
+            });
+            
+            
+           
+
+        
+
