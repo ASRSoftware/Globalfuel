@@ -116,12 +116,19 @@ class Controller_Welcome extends Controller {
     }
     
     public function action_newproject() {
+<<<<<<< HEAD
         $view = View::Forge('layout/property');
         $header = View::Forge('layout/header');
         $header->registration = View::Forge('layout/registration');
         $view->header = $header; 
+=======
+        $view = View::Forge('layout/newproject');
+        $view->header = View::Forge('layout/header');
+>>>>>>> eca94c31792919861eb2852ccbac48606d363d4b
         $view->sidebar = View::Forge('layout/component/sidebar-left');
-        $view->project_listing = View::Forge('layout/project');
+        $view->projectlist = View::Forge('layout/project_listing');
+//        $view->postproperty->propertytype = View::Forge('layout/propertytype');
+//        $view->project_listing = View::Forge('layout/project');
         $view->footer = View::Forge('layout/footer');
         return $view;
     }

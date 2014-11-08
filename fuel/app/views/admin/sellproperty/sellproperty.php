@@ -19,9 +19,9 @@
     </head>
     <body>
         <div class="container">
-                <form class="sell-property-form" role="form" method="POST" action=""> 
                 <div class="row">
                     <div class="col-md-6">
+                        <form role="form" method="post" action="http://localhost/Globalfuel/public/admin/sell"> 
                         <legend>Property Info</legend>
                             <?php echo $propertymaster ?>
                           

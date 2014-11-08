@@ -108,12 +108,49 @@ class Controller_Admin extends Controller {
 
     public function action_sell($subname = null) {
         if ($subname == null) {
-
-            if (Input::method() == 'post') {
+            if (Input::method() == 'POST') {
+                echo 'in';
                 $obj = new Model_CommonFunction();
-                $inarray = array('user_id'=>'1','city_id'=>'1','city_area'=>'1','propertype_id'=>'1','sub_propertytype'=>'1');
+                $inarray = array('user_id'=>'1','property_mode_id'=>Input::post('sale'),
+                 'city_id'=>Input::post('city'),'city_area'=>Input::post('city_area'),'locality_id'=>Input::post('area'),
+                 'project_society_id'=>Input::post('project_society'),'propertype_id'=>Input::post('propertytype'),
+                 'sub_propertytype'=>Input::post('propertysubtype'),'covered_area'=>Input::post('covered_area'), 
+                 'unit_id'=>Input::post('unitname'),'plot_area'=>Input::post('plot_area'), 'unit_id'=>Input::post('unitname'),
+                    'carpet_area'=>Input::post('Carpet area'), 'unit_id'=>Input::post('unitname'),'cost_of_property'=>Input::post('price'),
+                    'price_per_sqft'=>Input::post('pricesqft'),'transaction_type'=>Input::post('transaction_status'),
+                    'possession_status'=>Input::post('Possession'),'no_bedroom'=>Input::post('bedroom'),
+                    'no_bathroom'=>Input::post('bathroom'),'no_balconies'=>Input::post('balconies'),'no_balconies'=>Input::post('balconies'),
+                    'furnished_status'=>Input::post('furnishedstatus'),'total_floor'=>Input::post('totalfloor'),'floor_of_property'=>Input::post('floor_of_property'),
+                    'description'=>Input::post('description'),'image'=>Input::post('image'),
+                    'number_id'=>'1');
+                        
                 $is_id = $obj->insertData('property',$inarray);
-                echo $is_id;
+                echo $is_id[0];
+                 $obj = new Model_CommonFunction();
+            $propertydata = $obj->get_data(array('table' => 'property_type'), array('propertype_id', 'propertype_name'));
+            $subpropertydata = $obj->get_data(array('table' => 'property_sub_type'), array('property_subtype_id', 'propertype_id', 'property_name'));
+            $unitdata = $obj->get_data(array('table' => 'unit'), array('unit' => 'unit_id', 'unit_name' => 'unit_name'));
+            $citydata = $obj->get_data(array('table' => 'city'), array('city_id' => 'city_id', 'city_name' => 'city_name'));
+            $cityareadata = $obj->get_data(array('table' => 'city_area'), array('city_id' => 'city_area_id', 'locality_name' => 'locality_name'));
+            $numberdata = $obj->get_data(array('table' => 'number'), array('number_id' => 'number_id', 'number_name' => 'number'));
+            $view = View::forge('admin/layout/dashboard');
+            $view->menu = View::forge('admin/layout/menu');
+            $view->container = View::forge('admin/sellproperty/sellproperty');
+            $form = View::forge('admin/sellproperty/propertymaster');
+            $form->propertytype = $propertydata;
+            $form->property_sub_type = $subpropertydata;
+            $form->unit = $unitdata;
+            $form->citydata = $citydata;
+            $form->cityarea = $cityareadata;
+            $form->number = $numberdata;
+            $view->container->propertymaster = $form;
+            
+            $aminities = View::forge('admin/sellproperty/amenities');
+            $view->container->aminities = $aminities;
+            $propertyfeature = View::forge('admin/sellproperty/propertyfeature');
+            $view->container->propertyfeature = $propertyfeature;
+            $view->container->propertyfeature->number = $numberdata;
+            return $view;
             } else {
             $obj = new Model_CommonFunction();
             $propertydata = $obj->get_data(array('table' => 'property_type'), array('propertype_id', 'propertype_name'));

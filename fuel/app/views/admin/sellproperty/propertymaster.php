@@ -2,7 +2,7 @@
 
 <div class="form-group rentandsaleselection">
     <label class="radio-inline">
-        <input checked type="radio" required="" name="sale" id="inlineRadio1" value="sale" onchange="">For Sale
+        <input checked type="radio" name="sale" id="inlineRadio1" value="sale" onchange="">For Sale
     </label>
     <label class="radio-inline">
         <input type="radio" name="sale" id="inlineRadio2" value="rent" onchange=""> Rent
@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col-md-4"><label for="propertytype">Type of Property*:</label></div>
     <div class="col-md-8">
-        <select name="propertytype" required="" id="propertytype" class="form-control" onchange="getPropertySubType(this.value);">
+        <select name="propertytype" id="propertytype" class="form-control" onchange="getPropertySubType(this.value);">
             
         </select>
     </div>
@@ -19,7 +19,7 @@
 <div class="row">
     <div class="col-md-4"><label for="propertytype">Property Sub type*:</label></div>
     <div class="col-md-8">
-        <select name="propertysubtype" required="" id="propertysubtype" class="form-control">
+        <select name="propertysubtype" id="propertysubtype" class="form-control">
 
         </select>
     </div>
@@ -29,9 +29,9 @@
 <legend>Area</legend>
 <div class="row">
     <div class="col-md-4"><label for="Property_area" >Covered area*:</label></div>
-    <div class="col-md-4"><input type="text" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Covered area" name="covered_area" required></div>
+    <div class="col-md-4"><input type="text" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Covered area" name="covered_area" ></div>
     <div class="col-md-4">
-        <select name="" id="" class="form-control" required>
+        <select name="unitname" id="" class="form-control" required>
             <?php foreach ($unit as $key => $value) { ?>
                 <option><?php echo $value['unit_name'] ?> </option>
             <?php } ?>
@@ -43,7 +43,7 @@
     <div class="col-md-4"><label for="Property_area" >Plot area:</label></div>
     <div class="col-md-4"><input type="text" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Plot area" name="plot_area" ></div>
     <div class="col-md-4">
-        <select name="" id="" class="form-control" >
+        <select name="unitname" id="" class="form-control" >
             <?php foreach ($unit as $key => $value) { ?>
                 <option value="<?php echo $value['unit_id'] ?>"><?php echo $value['unit_name'] ?></option>
             <?php } ?>
@@ -55,7 +55,7 @@
     <div class="col-md-4"><label for="Property_area" >Carpet area:</label></div>
     <div class="col-md-4"><input type="text" class="form-control col-xs-4" id="exampleInputEmail1" placeholder="Carpet area" name="carpet_area" ></div>
     <div class="col-md-4">
-        <select name="" id="" class="form-control" >
+        <select name="unitname" id="" class="form-control" >
 <?php foreach ($unit as $key => $value) { ?>
                 <option value="<?php echo $value['unit_name'] ?>"><?php echo $value['unit_name'] ?></option>
             <?php } ?>
@@ -68,7 +68,7 @@
 <div class="form-group">
     <label for="Property_area">City*:</label>
     <span class="input-right" title="City">
-        <select class="form-control" required="" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value);"> 
+        <select class="form-control" name="city" id="city" data-placeholder="City" onchange="loadCityArea(this.value);"> 
             <option value="">Select City</option>
 <?php
 $cityname = new loadData();
@@ -82,7 +82,7 @@ foreach ($city as $value) {
     <br>
     <span class=" input-right" title="Location">
         <label for="Property_area">City Area*:</label>
-        <select class="form-control" required="" name="location" id="location" data-placeholder="Location" onchange="loadlocality(this.value)">
+        <select class="form-control" name="location" name="city_area" id="location" data-placeholder="Location" onchange="loadlocality(this.value)">
             <option value="">Location</option>
         </select>
     </span>
@@ -106,7 +106,7 @@ foreach ($city as $value) {
 <div class="form-group " >
 
     <label for="Property_area">Name of Project/Society:</label>
-    <select  class="form-control" name="location" >
+    <select  class="form-control" name="project_society" >
         <option>Select Project</option>
         <option>2</option>
         <option>3</option>
@@ -200,7 +200,7 @@ foreach ($number as $key => $value) {
         <br /><br /><br />
         <div class="row">
             <div class="col-md-2 col-md-offset-3"> <label for="inptprice">Or</label></col-md-3></div>
-            <div class="col-md-5"><label for="inptprice"><input type="text" class="form-control rentprice"  name='price' placeholder="Enter price" required="" /></label></div>
+            <div class="col-md-5"><label for="inptprice"><input type="text" class="form-control rentprice"  name='price' placeholder="Enter price" /></label></div>
         </div>
 
     </div>
@@ -210,10 +210,10 @@ foreach ($number as $key => $value) {
     <div class="col-md-4"><label>Transaction Type*:</label> </div>
     <div class="col-md-6">
         <label fo class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="New Property"> New Property
+            <input type="radio" name="transaction_status" id="inlineRadio1" value="New Property"> New Property
         </label>
         <label fo class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Resale Property"> Resale Property
+            <input type="radio" name="transaction_status" id="inlineRadio1" value="Resale Property"> Resale Property
         </label>
     </div>
 </div>
