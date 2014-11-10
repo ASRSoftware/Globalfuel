@@ -1,3 +1,7 @@
+
+
+
+
 <?php echo $header ?>
 
     <section class="parallax parallax-header parallax-big" style="background-image: url('<?php echo Uri::base(false);?>assets/img/demo-content/properties_parallax.jpg')">

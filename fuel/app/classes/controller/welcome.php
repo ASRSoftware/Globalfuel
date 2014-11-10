@@ -116,15 +116,15 @@ class Controller_Welcome extends Controller {
     }
     
     public function action_newproject() {
-<<<<<<< HEAD
+
         $view = View::Forge('layout/property');
         $header = View::Forge('layout/header');
         $header->registration = View::Forge('layout/registration');
         $view->header = $header; 
-=======
+
         $view = View::Forge('layout/newproject');
         $view->header = View::Forge('layout/header');
->>>>>>> eca94c31792919861eb2852ccbac48606d363d4b
+
         $view->sidebar = View::Forge('layout/component/sidebar-left');
         $view->projectlist = View::Forge('layout/project_listing');
 //        $view->postproperty->propertytype = View::Forge('layout/propertytype');
@@ -141,6 +141,24 @@ class Controller_Welcome extends Controller {
        // $view->project_listing = View::Forge('layout/project');
         $view->footer = View::Forge('layout/footer');
         return $view;
+    }
+    public function action_checkUser($userName){
+        $result =  new Model_CommonFunction();
+        $data = $result->get_data(array('table'=>'user','where'=>'user_name','value'=>$userName),array('user_name'));
+        if($data)
+        {
+            return 'no';
+        }
+        return 'yes';
+    }
+    public function action_checkEmail($email){
+        $result =  new Model_CommonFunction();
+        $emailData = $result->get_data(array('table'=>'user','where'=>'email','value'=>$email),array('email','name'));
+        if(empty($emailData))
+        {
+            return 'no';
+        }
+        return 'yes';
     }
     public function action_getcity($id = null){
      
