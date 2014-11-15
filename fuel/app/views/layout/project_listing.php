@@ -52,6 +52,7 @@
                 </section>
                 <section>
                     <div class="row">
+                        <?php foreach ($bulist as $key=>$value){?>
                         <div class="col-md-6 col-sm-6">
                             <div class="thumbnail clean">
                                 <div class="listing-image">
@@ -78,24 +79,20 @@
                                     </div>
                                 </div>
                                 <div class="caption">
-                                    <h4>Miss Valley Residence<br>
+                                    <h4><?php echo $value['Baunglow_name'];?><br>
                                         <small>USA, California</small></h4>
 
                                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
                                 </div>
-                                <a href="#" class="btn btn-link " role="button">+ Show Details</a> <span class="price-tag important pull-right"><strong>$2.650.000</strong></span>
+                                <a href="#" class="btn btn-link " role="button">+ Show Details</a> <span class="price-tag important pull-right"><strong><?php echo $value['price'];?></strong></span>
                                 <ul class="property-tags">
-                                    <li><span data-toggle="tooltip" data-placement="top" title="Tooltip on top"><i class="fa fa-home"></i> 546 sqm</span></li>
+                                    <li><span data-toggle="tooltip" data-placement="top" title="Tooltip on top"><i class="fa fa-home"></i> Rs <?php echo $value['Baunglow_area'];?></span></li>
                                     <li><span data-toggle="tooltip" data-placement="left" title="Tooltip on left"><i class="icon-bed"></i> 3</span></li>
                                     <li><span data-toggle="tooltip" data-placement="right" title="Tooltip on right"><i class="icon-shower"></i> 5</span></li>
                                 </ul>
-                            </div>
+                            </div>                         
                         </div>
-                        
-                        
-                        
-                        
-                        
+                        <?php } ?>
                     </div>
                     <hr>
                     <ul class="pagination pull-right">

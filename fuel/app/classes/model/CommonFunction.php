@@ -26,7 +26,7 @@ class Model_CommonFunction extends Model {
      * 
      * 
      * ********************************************** */
-    
+
     public function get_data($table = array(), $select = array()) {
         if (!isset($table['value'])) {
             $result = \DB::select_array($select)
@@ -83,7 +83,6 @@ class Model_CommonFunction extends Model {
         $query = DB::delete($table)->where($where, 'like', $value)->execute();
     }
 
-    
     public function search($table, $where, $value) {
 
 
@@ -109,24 +108,10 @@ class Model_CommonFunction extends Model {
         $result->execute()->as_array();
     }
 
-//    public function get_city_data() {
-//        $cityname = \DB::select('*')
-//                ->from('city')
-//                ->execute();
-//        return $cityname->as_array();
-//    }
-//
-//    public function get_city_area() {
-//        $cityArea = \DB::select('*')
-//                ->from('city_area')
-//                ->execute();
-//        return $cityArea->as_array();
-//    }
-//
-//    public function get_city_locality() {
-//        $locality = \DB::select('*')
-//                ->from('locality')
-//                ->execute();
-//        return $locality->as_array();
-//    }
+    public static function get_bunglow() {
+        $result = \DB::select('*')
+                ->from('baunglow_master')->execute()->as_array();
+        return $result;
+    }
+
 }

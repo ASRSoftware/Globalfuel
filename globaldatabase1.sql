@@ -11,8 +11,8 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for globalrealestate
-CREATE DATABASE IF NOT EXISTS `globalrealestate` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `globalrealestate`;
+--- CREATE DATABASE IF NOT EXISTS `globalrealestate` /*!40100 DEFAULT CHARACTER SET latin1 */;
+--- USE `globalrealestate`;
 
 
 -- Dumping structure for table globalrealestate.alert
