@@ -6,7 +6,7 @@ $(function () {
 $('document').ready(function () {
     $('.rentandsaleselection input').click(
             function (arg) {
-                if ($(this).val() === 'rent') {
+                if ($(this).val() === '2') {
                     $('#container-rent').show().find('input, select').removeAttr('disabled');
                     $('#container-sale').hide().find('input, select').attr('disabled', 'true');
                 } else {
@@ -57,6 +57,23 @@ $(document).ready(function () {
         var thousand = parseInt($('#thousand').val())*1000;
         
         $('#price').val((crore)+(lac)+thousand);
+    }
+
+});
+$(document).ready(function () {
+
+     $('#thousands, #lacs, #hundreds').change(function () {
+        calculateTotalRent();
+
+    });
+    
+    
+    function calculateTotalRent(){
+        
+        var lac = parseInt($('#lacs').val())*100000;
+        var thousand = parseInt($('#thousands').val())*1000;
+        var hundred = parseInt($('#hundreds').val())*100;
+        $('#pricerent').val((lac)+(thousand)+hundred);
     }
 
 });

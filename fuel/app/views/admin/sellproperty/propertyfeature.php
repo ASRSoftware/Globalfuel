@@ -36,7 +36,7 @@
     <div class="col-md-4"><label> Is property furnished*:</label></div>
     <div class="col-md-4">
         <select name="furnishedstatus" id="" class="form-control" >
-            <option value=""> Furnished Status</option>
+            <option value=" "> Furnished Status</option>
             <option value="1">Furnished</option>
             <option value="2">Semi Furnished</option>
             <option value="3">Unfurnished</option>
@@ -80,6 +80,8 @@
 <legend>Add images</legend>
 <div class="form-group">
     <label for="exampleInputFile">Upload Bungalow Image</label>
-    <input type="file" id="exampleInputFile" multiple="multiple" name="image">
+    <input type="file" id="exampleInputFile" multiple="multiple" name="image1">
+    <input type="file" id="exampleInputFile" multiple="multiple" name="image2">
+    <input type="file" id="exampleInputFile" multiple="multiple" name="image3">
     <p class="help-block">To Upload Multiple images, press <kbd>ctrl</kbd></p>
 </div>

@@ -45,15 +45,7 @@ class Controller_Welcome extends Controller {
     public function action_registration() {
 
         $result = new Model_CommonFunction();
-        
-        $data = array('name' => Input::POST('name'), 
-                      'user_name' => Input::POST('username'),
-                      'contact_number' => Input::POST('phone'), 
-                      'email' => Input::POST('emailid'),
-                      'password' => md5(Input::POST('password')),
-                      'user_type' => 'user',
-                      'insertion_date'=>date('Y-m-d H:i:s'));
-        
+        $data = array();
         $result->insertData('user', $data);
 
         $view = View::Forge('layout/index');
@@ -98,15 +90,59 @@ class Controller_Welcome extends Controller {
         return $view;
     }
 
-    public function action_sellrentproperty() {
-        $view = View::Forge('layout/property');
-        $header = View::Forge('layout/header');
-        $header->registration = View::Forge('layout/registration');
-        $view->header = $header;
-        $view->sidebar = View::Forge('layout/component/sidebar-left');
-        $view->postproperty = View::Forge('layout/component/postproperty');
-        $view->footer = View::Forge('layout/footer');
-        return $view;
+    public function action_sellrentproperty($subname = null) {
+        if ($subname = null) {
+            if (Input::method() == 'POST') {
+                $obj = new Model_CommonFunction();
+                $unitdata = $obj->get_data(array('table' => 'unit'), array('unit_id' => 'unit_id', 'unit' => 'unit_name'));
+                $numberdata = $obj->get_data(array('table' => 'number'), array('number' => 'number_id', 'number_name' => 'number'));
+                $view = View::Forge('layout/property');
+                $header = View::Forge('layout/header');
+                $header->registration = View::Forge('layout/registration');
+                $view->header = $header;
+                $view->sidebar = View::Forge('layout/component/sidebar-left');
+                $view->postproperty = View::Forge('layout/postproperty');
+                $propertyfeature = View::forge('admin/sellproperty/propertyfeature');
+                $aminities = View::forge('admin/sellproperty/amenities');
+                $form = View::forge('admin/sellproperty/propertymaster');
+                $form->msg = 'success';
+                $form->unit = $unitdata;
+                $form->number = $numberdata;
+                $view->postproperty->propertymaster = $form;
+                $view->postproperty->propertyfeature = $propertyfeature;
+                $view->postproperty->aminities = $aminities;
+                $view->postproperty->propertyfeature->number = $numberdata;
+                $view->footer = View::Forge('layout/footer');
+                return $view;
+            } else {
+
+
+                $obj = new Model_CommonFunction();
+                $unitdata = $obj->get_data(array('table' => 'unit'), array('unit_id' => 'unit_id', 'unit' => 'unit_name'));
+                $numberdata = $obj->get_data(array('table' => 'number'), array('number' => 'number_id', 'number_name' => 'number'));
+                $view = View::Forge('layout/property');
+                $header = View::Forge('layout/header');
+                $header->registration = View::Forge('layout/registration');
+                $view->header = $header;
+                $view->sidebar = View::Forge('layout/component/sidebar-left');
+                $view->postproperty = View::Forge('layout/postproperty');
+                $propertyfeature = View::forge('admin/sellproperty/propertyfeature');
+                $aminities = View::forge('admin/sellproperty/amenities');
+                $form = View::forge('admin/sellproperty/propertymaster');
+                $form->msg = '';
+                $form->unit = $unitdata;
+                $form->number = $numberdata;
+                $view->postproperty->propertymaster = $form;
+                $view->postproperty->propertyfeature = $propertyfeature;
+                $view->postproperty->aminities = $aminities;
+                $view->postproperty->propertyfeature->number = $numberdata;
+                $view->footer = View::Forge('layout/footer');
+                return $view;
+            }
+        }
+        else {
+            echo 'no ull' . $subname;
+        }
     }
 
     public function action_bunglow() {
@@ -149,25 +185,6 @@ class Controller_Welcome extends Controller {
         return $view;
     }
 
-    public function action_checkEmail($email) {
-        $result = new Model_CommonFunction();
-        $emailen = str_replace('@dot@', '.', $email);
-        $emailData = $result->get_data(array('table'=>'user','where'=>'email','value'=>$emailen), array('user_name'));
-        if($emailData){
-            return 'no';
-        }
-        return 'yes';
-    }
-    
-    public function action_checkUser($userName) {
-        $result = new Model_CommonFunction();
-        $data = $result->get_data(array('table' => 'user', 'where' => 'user_name', 'value' => $userName), array('user_name'));
-        if ($data) {
-            return 'no';
-        }
-        return 'yes';
-    }
-
     public function action_getcity($id = null) {
 
         $result = new Model_CommonFunction();
@@ -182,6 +199,12 @@ class Controller_Welcome extends Controller {
         return json_encode($propertydata);
     }
 
+    public function action_getcityproject($id = null) {
+        $result = new Model_CommonFunction();
+        $data = $result->get_data(array('table' => 'project_society', 'where' => 'locality_id', 'value' => $id), array('project_society_id', 'Project_society_name'));
+        return json_encode($data);
+    }
+
     /**
      * The 404 action for the application.
      *
@@ -189,7 +212,7 @@ class Controller_Welcome extends Controller {
      * @return  Response
      */
     public function action_404() {
-//        return Response::forge(Presenter::forge('welcome/404'), 404);
+        return Response::forge(Presenter::forge('welcome/404'), 404);
     }
 
 }

@@ -21,7 +21,7 @@
         <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <form role="form" method="post" action="http://localhost/Globalfuel/public/admin/sell"> 
+                        <form role="form" method="post" action="http://localhost/Globalfuel/public/admin/sell" enctype="multipart/form-data" > 
                         <legend>Property Info</legend>
                             <?php echo $propertymaster ?>
                           
