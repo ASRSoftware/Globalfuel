@@ -23,7 +23,7 @@
 
 
                     <div class="register-form">
-                        <form role="form" action="" method="post" class=""
+                        <form role="form" name="registration" id="registration" action="<?php echo Uri::base(false);?>welcome/registration/" method="post" class=""
                               data-email-subject="" data-show-errors="true">
 
                             <div class="form-group">
@@ -36,7 +36,7 @@
                             </div>
 
                             <div class="form-group">
-                                <input required type="email" name="email" id="email" class="form-control"
+                                <input required type="email" name="emailid" id="emailid" class="form-control"
                                        placeholder="Email *">
                                 <span id="availableEmail" style="color: red;"></span>
                             </div>
@@ -55,7 +55,9 @@
                             <div class="form-group">
                                 <input required type="password" name="cnfpassword" id="cnfpassword" class="form-control"
                                        placeholder="Confirm Password">
+                                 <span id="passwordwrong" style="color: red;"></span>
                             </div>
+                            
                             <button type="submit" class="btn btn-brick btn-xs large-padding  pull-right">Register Me</button>
 
                         </form>
