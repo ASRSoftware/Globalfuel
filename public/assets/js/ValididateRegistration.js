@@ -19,11 +19,12 @@ $(document).ready(function () {
 
 
     $("#username").change(function () {
+        //alert(document.URL);
         $('#availableUser').html('');
         var username = $('#username').val();
         $.ajax({
             type: "GET",
-            url: "http://localhost/Globalfuel/public/welcome/checkUser/" + username,
+            url: document.URL+"welcome/checkUser/" + username,
             datatype: 'string',
             success: function (data) {
                 if (data === 'no')
@@ -42,7 +43,7 @@ $(document).ready(function () {
         var enemail = email.replace(".", "@dot@");
         $.ajax({
             type: "GET",
-            url: "http://localhost/Globalfuel/public/welcome/checkEmail/" + enemail,
+            url: document.URL+"welcome/checkEmail/" + enemail,
             datatype: 'string',
             success: function (data) {
                 alert(data);
