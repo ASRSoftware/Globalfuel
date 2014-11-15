@@ -13,14 +13,16 @@
             }
             
         </style>
+        <?php echo Fuel\Core\Asset::js('jquery.min.js') ?>
+        <?php  echo Fuel\Core\Asset::js('city_area.js') ?>
     </head>
     <body>
         <div class="container">
-            <form role="form">
+            <form role="form" action="http://localhost/Globalfuel/public/admin/bungalow"  method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-6">
                         <legend>Property Info</legend>
-                        <form role="form">
+                       
                             <?php echo $bungalowmaster ?>
                           
                             

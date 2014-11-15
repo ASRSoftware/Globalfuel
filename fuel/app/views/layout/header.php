@@ -17,7 +17,7 @@
         <?php echo Asset::js('jspara/myjquery.js') ?>
         <script type="text/javascript" src="js/myjquery.js"></script>
         <title>Global- Real Estate </title>
-
+       
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
         <!--[if lt IE 9]>

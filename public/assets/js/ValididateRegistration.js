@@ -5,19 +5,19 @@
  */
 
 $(document).ready(function () {
-    
-    $(".login-registration-panel-close").click(function (){
+
+    $(".login-registration-panel-close").click(function () {
         $('#availableUser').html('');
         $('#availableEmail').html('');
-        $('#name').html('');
-        $('#phone').html('');
-        $('#password').html('');
-        $('#cnfpassword').html('');
-        $('#email').html('');
-       
+        $('#name').val('');
+        $('#phone').val('');
+        $('#password').val('');
+        $('#cnfpassword').val('');
+        $('#emailid').val('');
+        $('#passwordwrong').html('');
     });
-    
-    
+
+
     $("#username").change(function () {
         $('#availableUser').html('');
         var username = $('#username').val();
@@ -26,7 +26,7 @@ $(document).ready(function () {
             url: "http://localhost/Globalfuel/public/welcome/checkUser/" + username,
             datatype: 'string',
             success: function (data) {
-                if(data==='no')
+                if (data === 'no')
                 {
                     $('#username').val('');
                     $('#username').focus();
@@ -35,31 +35,39 @@ $(document).ready(function () {
             }
         });
     });
-    
-    
-    
-    
-    
-    $("#email").change(function () {
+
+    $("#emailid").change(function () {;
         $('#availableEmail').html('');
-        var email = $('#email').val();
-        
-        
+        var email = $('#emailid').val();
+        var enemail = email.replace(".", "@dot@");
         $.ajax({
             type: "GET",
-            url: "http://localhost/Globalfuel/public/welcome/checkEmail/" + $.trim(email),
+            url: "http://localhost/Globalfuel/public/welcome/checkEmail/" + enemail,
             datatype: 'string',
             success: function (data) {
-                
-                if(data==='no')
+                alert(data);
+                if (data === 'no')
                 {
-                    $('#availableEmail').append('Sorry! Email id is already registred.');
-                    $('#email').val('');
-                    $('#email').focus();
+                    $('#emailid').val('');
+                    $('#emailid').focus();
+                    $('#availableEmail').append('Sorry,Email id is already registred!');
                 }
             }
         });
-
     });
-    
+
+
+
+
+    $('#registration').submit(function () {
+        var password = $.trim($('#password').val());
+        var cnfpassword = $.trim($('#cnfpassword').val());
+
+        if (password !== cnfpassword) {
+            $('#passwordwrong').append('Sorry,Password does not match!');
+            $('#password').val('');
+            $('#cnfpassword').val('');
+            return false;
+        }
+    });
 });
