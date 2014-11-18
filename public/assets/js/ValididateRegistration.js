@@ -13,7 +13,7 @@ $(document).ready(function () {
         $('#phone').val('');
         $('#password').val('');
         $('#cnfpassword').val('');
-        $('#emailid').val('');
+        $('#email').val('');
         $('#passwordwrong').html('');
     });
 
@@ -37,27 +37,25 @@ $(document).ready(function () {
         });
     });
 
-    $("#emailid").change(function () {;
+    $("#email").change(function () {;
         $('#availableEmail').html('');
-        var email = $('#emailid').val();
+        var email = $('#email').val();
         var enemail = email.replace(".", "@dot@");
+        
         $.ajax({
             type: "GET",
             url: document.URL+"welcome/checkEmail/" + enemail,
             datatype: 'string',
             success: function (data) {
-                alert(data);
                 if (data === 'no')
                 {
-                    $('#emailid').val('');
-                    $('#emailid').focus();
+                    $('#email').val('');
+                    $('#email').focus();
                     $('#availableEmail').append('Sorry,Email id is already registred!');
                 }
             }
         });
     });
-
-
 
 
     $('#registration').submit(function () {

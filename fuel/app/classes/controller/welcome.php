@@ -45,9 +45,15 @@ class Controller_Welcome extends Controller {
     public function action_registration() {
 
         $result = new Model_CommonFunction();
-        $data = array();
+        $data = array(
+                        'name' => Input::post('name'),
+                        'contact' => Input::post('phone'),
+                        'user_name' => Input::post('username'),
+                        'email' => Input::post('email'),
+                        'password' => Input::post('name'),
+                        'user_type' => 'user'
+                      );
         $result->insertData('user', $data);
-
         $view = View::Forge('layout/index');
         $header = View::Forge('layout/header');
         $header->registration = View::Forge('layout/registration');
@@ -59,6 +65,25 @@ class Controller_Welcome extends Controller {
         $view->best_offer = View::forge('layout/component/best_offer');
         $view->footer = View::Forge('layout/footer');
         return $view;
+    }
+
+    public function action_checkUser($userName) {
+        $result = new Model_CommonFunction();
+        $data = $result->get_data(array('table' => 'user', 'where' => 'user_name', 'value' => $userName), array('user_name'));
+        if ($data) {
+            return 'no';
+        }
+        return 'yes';
+    }
+
+    public function action_checkEmail($email) {
+        $result = new Model_CommonFunction();
+        $newstring = str_replace("@dot@", ".", $email);  
+        $emailData = $result->get_data(array('table' => 'user', 'where' => 'email', 'value' => $newstring), array('email', 'name'));
+        if (empty($emailData)) {
+            return 'yes';
+        }
+        return 'no';
     }
 
     /**
@@ -91,7 +116,7 @@ class Controller_Welcome extends Controller {
     }
 
     public function action_sellrentproperty($subname = null) {
-        if ($subname = null) {
+        if ($subname == null) {
             if (Input::method() == 'POST') {
                 $obj = new Model_CommonFunction();
                 $unitdata = $obj->get_data(array('table' => 'unit'), array('unit_id' => 'unit_id', 'unit' => 'unit_name'));
@@ -139,8 +164,7 @@ class Controller_Welcome extends Controller {
                 $view->footer = View::Forge('layout/footer');
                 return $view;
             }
-        }
-        else {
+        } else {
             echo 'no ull' . $subname;
         }
     }
